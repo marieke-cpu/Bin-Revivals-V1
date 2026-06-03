@@ -1,0 +1,25 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Large media files — GitHub enforces a 100 MB per-file limit.
+# If a video exceeds 100 MB, compress it before committing.
+# All current videos are under 100 MB and ARE tracked by git.
+# Use this section to exclude any raw/uncompressed source files:
+# Videos/source/
+# *.raw.mov
+
+# Editor & IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node (if ever used)
+node_modules/
