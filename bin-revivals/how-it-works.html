@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How Bin Revivals works — a simple 4-step process to get your wheelie bins professionally cleaned, sanitised and deodorised across Manawatū. Book in minutes." />
+  <title>How It Works | Bin Revivals — Professional Bin Cleaning Manawatū</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "#business",
+        "name": "Bin Revivals",
+        "telephone": "+64279652607",
+        "email": "binrevivals@gmail.com",
+        "address": {"@type":"PostalAddress","addressLocality":"Palmerston North","addressRegion":"Manawatū-Whanganui","addressCountry":"NZ"},
+        "areaServed": "Manawatū Region, New Zealand"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How Bin Revivals Works",
+        "description": "A simple process to get your wheelie bins professionally cleaned and deodorised in Manawatū.",
+        "step": [
+          {"@type":"HowToStep","position":1,"name":"Book Your Clean","text":"Choose a one-off or recurring service and request your booking online or by phone."},
+          {"@type":"HowToStep","position":2,"name":"We Arrive & Clean","text":"Using professional equipment, we remove grime, bacteria, rotting residue and unpleasant odours from inside and outside your bins."},
+          {"@type":"HowToStep","position":3,"name":"Sanitise & Deodorise","text":"Bins are thoroughly sanitised and deodorised with eco-friendly products to leave them smelling completely fresh."},
+          {"@type":"HowToStep","position":4,"name":"Enjoy A Cleaner Bin","text":"No more unpleasant smells, bacteria build-up or dirty wheelie bins. Fresh bins at your door."}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://binrevivals.co.nz/"},
+          {"@type":"ListItem","position":2,"name":"How It Works","item":"https://binrevivals.co.nz/how-it-works.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"How long does a bin clean take?","acceptedAnswer":{"@type":"Answer","text":"A standard residential clean of 1–3 bins takes approximately 15–20 minutes including the full wash, sanitisation and deodorising treatment."}},
+          {"@type":"Question","name":"Do I need to be home during the service?","acceptedAnswer":{"@type":"Answer","text":"No. As long as your bins are accessible we can complete the clean without you being home. We'll let you know when we're done."}},
+          {"@type":"Question","name":"Can you clean very dirty or neglected bins?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Our professional equipment handles even severely neglected bins. If a bin requires extra attention we'll let you know — there's no additional charge for standard dirty bins."}},
+          {"@type":"Question","name":"Do you clean all types of bins?","acceptedAnswer":{"@type":"Answer","text":"Yes — general waste, recycling, food scraps and commercial bins. If you have a wheelie bin, we can clean it."}},
+          {"@type":"Question","name":"What happens on collection day?","acceptedAnswer":{"@type":"Answer","text":"For monthly services, we schedule your clean after your regular collection day so bins are cleaned fresh after being emptied. This gives the best results."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- FLOATING QUOTE BUTTON -->
+  <a href="index.html#book" class="floating-cta visible" id="floatingCta" aria-label="Get a free quote">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <span>Free Quote</span>
+  </a>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar" id="urgencyBar">
+    <div class="urgency-bar__inner">
+      <span class="urgency-bar__icon">⚡</span>
+      <p><strong>Limited Weekly Booking Availability</strong> — <a href="index.html#book">Secure Your Spot Today &rarr;</a></p>
+    </div>
+    <button class="urgency-bar__close" id="urgencyClose" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals Logo" />
+      </a>
+      <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="how-it-works.html" style="color:var(--green-lime)">How It Works</a></li>
+        <li><a href="why-us.html">Why Choose Us</a></li>
+        <li><a href="service-areas.html">Service Areas</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#book" class="nav__cta">Get a Free Quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sa-page-hero">
+    <div class="container">
+      <div class="sa-page-hero__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb__sep">›</span>
+          <span class="breadcrumb__current">How It Works</span>
+        </nav>
+        <p class="sa-page-hero__eyebrow">Simple Process</p>
+        <h1 class="sa-page-hero__title">How Bin Revivals<br/><span>Works</span></h1>
+        <p class="sa-page-hero__sub">A simple process that keeps your bins cleaner, fresher and more hygienic — done at your door with zero hassle.</p>
+        <div class="sa-page-hero__actions">
+          <a href="index.html#book" class="btn btn--primary btn--lg">Get A Free Quote</a>
+          <a href="tel:0279652607" class="btn btn--ghost">📞 027 965 2607</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-STEP PROCESS -->
+  <section class="how-it-works" id="process" style="padding:100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">The Process</p>
+        <h2 class="section-title">Four Steps. Fresh Bins.</h2>
+        <p class="section-sub">From booking to clean bins — it's straightforward and hassle-free.</p>
+      </div>
+      <div class="steps steps--four" style="margin-top:60px;">
+        <div class="step">
+          <div class="step__number">01</div>
+          <div class="step__icon">📅</div>
+          <h3 class="step__title">Book Your Clean</h3>
+          <p class="step__desc">Choose a one-off or recurring service and request your booking online or by phone. We confirm quickly — usually same day.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">02</div>
+          <div class="step__icon">🚿</div>
+          <h3 class="step__title">We Arrive &amp; Clean</h3>
+          <p class="step__desc">Using professional equipment, we remove grime, bacteria, rotting residue and unpleasant odours from inside and outside your bins.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">03</div>
+          <div class="step__icon">🌿</div>
+          <h3 class="step__title">Sanitise &amp; Deodorise</h3>
+          <p class="step__desc">Bins are thoroughly sanitised and deodorised with eco-friendly products to leave them smelling completely fresh — every time.</p>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">04</div>
+          <div class="step__icon">✅</div>
+          <h3 class="step__title">Enjoy A Cleaner Bin</h3>
+          <p class="step__desc">No more unpleasant smells, bacteria build-up or dreading bin night. Fresh, clean bins at your door — done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE & AFTER SHOWCASE -->
+  <section class="video-showcase" id="videos" style="padding:80px 0 100px;">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-label section-label--light">Real Transformations</p>
+        <h2 class="section-title">See The Results</h2>
+        <p class="section-sub section-sub--light">Real jobs. Real transformations. See exactly what professional bin cleaning looks like.</p>
+      </div>
+      <div class="video-grid--homepage">
+        <div class="video-card video-card--autoplay"
+             data-video-src="Videos/Residential4.mov"
+             data-title="Before &amp; After Transformation"
+             data-category-label="Before &amp; After">
+          <div class="video-card__media">
+            <video class="video-card__video" muted loop playsinline preload="none"></video>
+            <div class="video-card__gradient"></div>
+            <div class="video-card__play-wrap">
+              <button class="video-card__play" aria-label="Watch video"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+            </div>
+            <div class="video-card__info">
+              <span class="video-card__category">Before &amp; After</span>
+              <h3 class="video-card__title">Before &amp; After Transformation</h3>
+              <div class="video-card__meta">
+                <span class="video-card__location">📍 Palmerston North</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card video-card--autoplay"
+             data-video-src="Videos/Residential1.MOV"
+             data-title="Professional Deep Clean"
+             data-category-label="Bin Cleaning">
+          <div class="video-card__media">
+            <video class="video-card__video" muted loop playsinline preload="none"></video>
+            <div class="video-card__gradient"></div>
+            <div class="video-card__play-wrap">
+              <button class="video-card__play" aria-label="Watch video"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+            </div>
+            <div class="video-card__info">
+              <span class="video-card__category">Bin Cleaning</span>
+              <h3 class="video-card__title">Professional Deep Clean</h3>
+              <div class="video-card__meta">
+                <span class="video-card__location">📍 Feilding</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card video-card--autoplay"
+             data-video-src="Videos/Residential10.MOV"
+             data-title="Sanitise &amp; Deodorise"
+             data-category-label="Full Service">
+          <div class="video-card__media">
+            <video class="video-card__video" muted loop playsinline preload="none"></video>
+            <div class="video-card__gradient"></div>
+            <div class="video-card__play-wrap">
+              <button class="video-card__play" aria-label="Watch video"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+            </div>
+            <div class="video-card__info">
+              <span class="video-card__category">Full Service</span>
+              <h3 class="video-card__title">Sanitise &amp; Deodorise</h3>
+              <div class="video-card__meta">
+                <span class="video-card__location">📍 Manawatū</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-showcase__cta">
+        <a href="gallery.html" class="btn btn--primary">View Full Gallery &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SIGNALS -->
+  <section class="location-section" style="background:var(--white);padding:80px 0;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What To Expect</p>
+        <h2 class="section-title">Professional From Start to Finish</h2>
+        <p class="section-sub">Here's what makes the Bin Revivals process different.</p>
+      </div>
+      <div class="trust-grid" style="margin-top:48px;">
+        <div class="trust-card">
+          <div class="trust-card__icon">⏱️</div>
+          <h3 class="trust-card__title">Quick Turnaround</h3>
+          <p class="trust-card__desc">Most residential cleans take 15–20 minutes. We work efficiently with no mess left behind.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">🏠</div>
+          <h3 class="trust-card__title">No Need To Be Home</h3>
+          <p class="trust-card__desc">Leave your bins accessible and we'll take care of the rest. We notify you when the job is done.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">🌿</div>
+          <h3 class="trust-card__title">Eco-Friendly Throughout</h3>
+          <p class="trust-card__desc">Every product we use is biodegradable and safe for your family, pets and Manawatū's waterways.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">📅</div>
+          <h3 class="trust-card__title">Scheduled After Collection</h3>
+          <p class="trust-card__desc">Monthly cleans are scheduled after your regular collection day — so bins are cleaned fresh after being emptied.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">💪</div>
+          <h3 class="trust-card__title">Commercial Equipment</h3>
+          <p class="trust-card__desc">Professional cleaning gear that removes what a garden hose simply can't — bacteria, mould and deep odours.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">✅</div>
+          <h3 class="trust-card__title">Satisfaction Guaranteed</h3>
+          <p class="trust-card__desc">Not happy? We'll sort it. We stand behind every clean we do — 100%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="location-section location-section--alt" style="padding:80px 0;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Common Questions</p>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Everything you need to know about the process.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">How long does a bin clean take? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>A standard residential clean of 1–3 bins takes approximately 15–20 minutes. This includes the full wash, sanitisation and deodorising treatment. We work efficiently with no mess left behind at your property.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do I need to be home during the service? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Not at all. As long as your bins are accessible — driveway or street-side — we can complete the clean without you being home. We'll let you know when the job is done. For monthly services, we'll also keep you informed of your next scheduled clean date.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">When should my bins be put out? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>For recurring monthly services, we schedule your clean after your regular collection day. This means your bins are cleaned fresh after being emptied — giving the best results. We'll confirm the timing when booking.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can you clean very dirty or neglected bins? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Absolutely — that's what we're here for. Our professional equipment handles even severely neglected bins. Whether your bin has years of build-up or just a few months of grime, we'll get it clean. There's no additional charge for standard dirty bins.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you clean all types of bins? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes — general waste bins, recycling bins, food scraps bins and commercial bins. If you have a wheelie bin, we can clean it. We also service shared waste areas for commercial properties and apartment complexes.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I book? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>You can book via our <a href="index.html#book">online booking form</a>, call us on <a href="tel:0279652607">027 965 2607</a> or email <a href="mailto:binrevivals@gmail.com">binrevivals@gmail.com</a>. We usually respond same day and will confirm your booking quickly.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="showcase-cta" style="padding:80px 0;">
+    <div class="container">
+      <div class="showcase-cta__inner">
+        <p class="section-label section-label--light">Ready?</p>
+        <h2 class="showcase-cta__headline">Ready For Cleaner Bins?</h2>
+        <p class="showcase-cta__sub">Book a one-off clean or start a monthly service. We'll take care of the rest.</p>
+        <div class="showcase-cta__actions">
+          <a href="index.html#book" class="btn btn--primary">Get A Free Quote</a>
+          <a href="pricing.html" class="btn btn--ghost">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close video">&times;</button>
+      <video class="lightbox__video" id="lightboxVideo" controls playsinline></video>
+      <div class="lightbox__caption">
+        <span class="lightbox__title" id="lightboxTitle"></span>
+        <span class="lightbox__category" id="lightboxCategory"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals" class="footer__logo" />
+          <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
+        </div>
+        <div class="footer__links">
+          <a href="pricing.html">Pricing</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="why-us.html">Why Choose Us</a>
+          <a href="service-areas.html">Service Areas</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#book">Get a Quote</a>
+        </div>
+        <div class="footer__social">
+          <a href="https://facebook.com/BinRevivals" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com/BinRevivals" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Bin Revivals. All rights reserved. Serving Manawatū, New Zealand.</p>
+        <p class="footer__credit">Website by <a href="https://rastrick.com.au" target="_blank" rel="noopener">RASTRICK. MADE</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
