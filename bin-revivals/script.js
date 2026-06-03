@@ -569,9 +569,9 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
-    'Videos/Residential4.mov',    // 25 MB
-    'Videos/Residential5.mov',    // 64 MB — preloaded well in advance
-    'Videos/Residential10.MOV',   // 18 MB
+    'Videos/Residential9.MOV',    // 9 MB
+    'Videos/Residential6.mov',    // 11 MB
+    'Videos/Residential12.MOV',   // 16 MB
   ];
 
   const slotA = document.getElementById('heroVideoA');
@@ -654,12 +654,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- boot --------------------------------------------------------------
 
-  // slotA already has src="Videos/Residential4.mov" from HTML and is
+  // slotA already has src="Videos/Residential9.MOV" from HTML and is
   // autoplaying — just make sure the active class is set and preload slot B
   slotA.classList.add('hero__video--active');
   slotA.play().catch(() => {});   // no-op if autoplay already started
 
-  // Begin buffering Residential5.mov into slotB immediately so it is
-  // ready well before Residential4 finishes
+  // Begin buffering Residential6.mov into slotB immediately so it is
+  // ready well before Residential9 finishes
   setTimeout(preloadNext, 800);
 })();
