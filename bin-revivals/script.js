@@ -570,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (function initHeroPlaylist() {
   const PLAYLIST = [
     'Videos/Residential4.mov',    // 25 MB
-    'Videos/Residential5.mov',    // 114 MB — large, preloaded well in advance
+    'Videos/Residential5.mov',    // 64 MB — preloaded well in advance
     'Videos/Residential10.MOV',   // 18 MB
   ];
 
