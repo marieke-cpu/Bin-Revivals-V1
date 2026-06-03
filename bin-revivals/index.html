@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional wheelie bin cleaning across Manawatū. Bin Revivals cleans, disinfects and deodorises bins for homes and businesses in Palmerston North, Feilding, Levin and throughout the region." />
-  <title>Bin Revivals | Professional Bin Cleaning Manawatū</title>
+  <link rel="canonical" href="https://binrevivals.co.nz/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bin Revivals" />
-  <meta property="og:title" content="Bin Revivals | Professional Bin Cleaning Manawatū" />
-  <meta property="og:description" content="Professional wheelie bin cleaning across the Manawatū region. Residential and commercial service from $30. Palmerston North, Feilding, Levin and 20+ surrounding towns." />
+  <meta property="og:title" content="Bin Revivals | Wheelie Bin Cleaning Palmerston North &amp; Manawatū" />
+  <meta property="og:description" content="Professional wheelie bin cleaning from $30. Residential and commercial service across Palmerston North, Feilding, Levin and all of Manawatū." />
+  <meta property="og:image" content="https://binrevivals.co.nz/assets/images/og-image.jpg" />
+  <meta name="description" content="Professional wheelie bin cleaning in Palmerston North and across Manawatū. Bin Revivals removes grime, bacteria and odours from $30. Book your clean today." />
+  <title>Bin Revivals | Wheelie Bin Cleaning Palmerston North &amp; Manawatū</title>
   <meta property="og:url" content="https://binrevivals.co.nz/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="preload" as="video" href="Videos/Commercial.mov" />
 
   <script type="application/ld+json">
   {
@@ -21,37 +24,172 @@
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "#business",
+        "@id": "https://binrevivals.co.nz/#business",
         "name": "Bin Revivals",
-        "description": "Professional wheelie bin cleaning, disinfection and deodorisation across the Manawatū region, New Zealand.",
+        "url": "https://binrevivals.co.nz",
+        "logo": "https://binrevivals.co.nz/assets/images/Main%20Website%20Logo.png",
+        "image": "https://binrevivals.co.nz/assets/images/og-image.jpg",
+        "description": "Professional wheelie bin cleaning services across the Manawatū region. Bin Revivals removes grime, bacteria and odours from residential and commercial bins using eco-friendly products. Serving Palmerston North, Feilding, Levin and 20+ surrounding towns.",
         "telephone": "+64279652607",
         "email": "binrevivals@gmail.com",
-        "sameAs": ["https://facebook.com/BinRevivals","https://instagram.com/BinRevivals"],
+        "founder": {
+          "@type": "Person",
+          "name": "Jacob Hewetson-Talamaivao"
+        },
+        "sameAs": [
+          "https://www.facebook.com/BinRevivals",
+          "https://www.instagram.com/BinRevivals"
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Palmerston North",
           "addressRegion": "Manawatū-Whanganui",
           "addressCountry": "NZ"
         },
-        "geo": {"@type":"GeoCoordinates","latitude":-40.3523,"longitude":175.6082},
-        "priceRange": "$$",
-        "areaServed": "Manawatū Region, New Zealand",
-        "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"17:00"}]
-      },
-      {
-        "@type": "Service",
-        "name": "Professional Wheelie Bin Cleaning Manawatū",
-        "provider": {"@id": "#business"},
-        "areaServed": "Manawatū Region, New Zealand",
-        "description": "We remove grime, bacteria and odours from wheelie bins using eco-friendly products. One-off and monthly recurring services across Palmerston North, Feilding, Levin and the entire Manawatū region.",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -40.3523,
+          "longitude": 175.6082
+        },
+        "areaServed": [
+          "Palmerston North","Feilding","Levin","Foxton","Ashhurst",
+          "Bunnythorpe","Longburn","Rongotea","Tokomaru","Shannon",
+          "Himatangi","Foxton Beach","Sanson","Bulls","Manawatū Region"
+        ],
+        "priceRange": "$",
+        "currenciesAccepted": "NZD",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Bin Cleaning Services",
           "itemListElement": [
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Single Bin Clean"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Monthly Recurring Clean"}}
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "One-Off Wheelie Bin Clean",
+                "description": "Single professional clean, disinfection and deodorisation of your wheelie bins. Done at your door using eco-friendly products."
+              },
+              "price": "30",
+              "priceCurrency": "NZD"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Monthly Bin Cleaning Service",
+                "description": "Regular monthly wheelie bin cleaning service. Set and forget — we come to you every month to keep your bins fresh, sanitised and odour-free."
+              },
+              "price": "30",
+              "priceCurrency": "NZD"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Commercial Bin Cleaning Manawatū",
+                "description": "Professional bin cleaning for businesses across the Manawatū region. Regular or one-off service for commercial wheelie bins."
+              }
+            }
           ]
-        }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "3",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Benson & Co Security"},
+            "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+            "reviewBody": "Jacob continues to do an amazing job cleaning our bins. It really is great value. We highly recommend this service."
+          },
+          {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Chicky M Hauraki"},
+            "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+            "reviewBody": "Omg my bin smells amazing, like bubblegum. Thank you so much for the clean today. Will definitely keep you on."
+          },
+          {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": "Lindy Crawford"},
+            "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+            "reviewBody": "Thank you Jacob, my bin looks and smells amazing! Awesome service."
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://binrevivals.co.nz/#website",
+        "url": "https://binrevivals.co.nz",
+        "name": "Bin Revivals",
+        "description": "Professional wheelie bin cleaning across the Manawatū region, New Zealand.",
+        "publisher": {"@id": "https://binrevivals.co.nz/#business"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://binrevivals.co.nz/#webpage",
+        "url": "https://binrevivals.co.nz/",
+        "name": "Bin Revivals | Wheelie Bin Cleaning Palmerston North & Manawatū",
+        "isPartOf": {"@id": "https://binrevivals.co.nz/#website"},
+        "about": {"@id": "https://binrevivals.co.nz/#business"},
+        "description": "Professional wheelie bin cleaning across Manawatū. Bin Revivals removes grime, bacteria and odours from $30. Serving Palmerston North, Feilding, Levin and 20+ towns."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does bin cleaning cost in Palmerston North?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bin Revivals offers professional bin cleaning from $30 per clean in Palmerston North and across the Manawatū region. Pricing covers a full wash, disinfection and deodorisation at your door."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What areas does Bin Revivals service?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bin Revivals services Palmerston North, Feilding, Levin, Foxton, Ashhurst, Bunnythorpe, Longburn, Rongotea, Tokomaru, Shannon, Himatangi, Foxton Beach, Sanson, Bulls and surrounding Manawatū towns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to be home for the bin clean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — you do not need to be home. We clean your bins at the kerb or in your driveway and leave them exactly where we found them. Just make sure they're accessible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often should I get my bins cleaned?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We recommend a monthly clean to keep bins fresh, hygienic and odour-free year round. We also offer one-off cleans for a single deep clean or fresh start."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the cleaning products safe for kids and pets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — Bin Revivals uses eco-friendly, environmentally safe cleaning products that are safe for your family, children and pets."
+            }
+          }
+        ]
       }
     ]
   }
@@ -86,7 +224,7 @@
     <nav class="nav" id="navbar">
       <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals Logo" />
+          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals logo — Professional Bin Cleaning Manawatū" />
         </a>
         <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -332,7 +470,7 @@
       </div>
       <div class="testimonials__grid">
         <div class="testimonial-card">
-          <img src="Reviews/Review3.jpeg" alt="Benson &amp; Co Security recommends Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" />
+          <img src="Reviews/Review3.jpeg" alt="Benson and Co Security recommends Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" />
           <div class="testimonial-card__body">
             <div class="testimonial-card__stars">★★★★★</div>
             <p class="testimonial-card__quote">"Jacob continues to do an amazing job cleaning our bins. It really is great value. We highly recommend this service."</p>
@@ -672,7 +810,7 @@
     <div class="container">
       <div class="about__inner">
         <div class="about__badge-wrap">
-          <img src="assets/images/2.png" alt="Bin Revivals Logo" class="about__badge-img" />
+          <img src="assets/images/2.png" alt="Bin Revivals locally owned bin cleaning business Manawatū" class="about__badge-img" />
         </div>
         <div class="about__content">
           <p class="section-label">About Us</p>
@@ -783,7 +921,7 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals" class="footer__logo" />
+          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North" class="footer__logo" />
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
