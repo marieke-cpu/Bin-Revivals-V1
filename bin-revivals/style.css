@@ -2459,7 +2459,7 @@ body.urgency-hidden .hero {
   object-fit: cover;
   display: block;
   opacity: 0;
-  transition: opacity 2.2s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
   will-change: opacity;
 }
 

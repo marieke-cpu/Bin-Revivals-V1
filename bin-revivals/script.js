@@ -562,22 +562,17 @@ document.addEventListener('DOMContentLoaded', () => {
 /* =========================================
    HERO VIDEO PLAYLIST
    =========================================
-   Timer-based rotation: each clip plays for
-   CLIP_MS milliseconds then crossfades smoothly
-   to the next. Preloading starts PRELOAD_MS
-   before the transition so the next clip is
-   always ready — no freeze, no black frames.
+   Each video plays to completion then crossfades
+   cleanly to the next. Standby slot buffers the
+   upcoming clip while the current one plays.
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
-    'Videos/Commercial.mov',       // 41 MB
-    'Videos/Residential2.MOV',    // 31 MB
-    'Videos/Residential3.MOV',    // 13 MB
-    'Videos/Residential11.MOV',   // 16 MB
+    'Videos/Commercial.mov',
+    'Videos/Residential2.MOV',
+    'Videos/Residential3.MOV',
+    'Videos/Residential11.MOV',
   ];
-
-  const CLIP_MS    = 10000;  // show each clip for 10 seconds
-  const PRELOAD_MS =  5000;  // begin buffering next clip 5 s before transition
 
   const slotA = document.getElementById('heroVideoA');
   const slotB = document.getElementById('heroVideoB');
@@ -594,7 +589,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function transition() {
+  function preloadNext() {
+    setSrc(standby, PLAYLIST[(curIdx + 1) % PLAYLIST.length]);
+  }
+
+  function onEnded(e) {
+    if (e.target !== active) return;
+
     curIdx = (curIdx + 1) % PLAYLIST.length;
     setSrc(standby, PLAYLIST[curIdx]);
 
@@ -604,45 +605,31 @@ document.addEventListener('DOMContentLoaded', () => {
       fired = true;
 
       standby.currentTime = 0;
-      standby.muted = true;
       standby.play().catch(() => {});
 
-      // Crossfade: bring standby in, fade active out simultaneously
       standby.classList.add('hero__video--active');
       active.classList.remove('hero__video--active');
 
-      const outgoing = active;
       [active, standby] = [standby, active];
 
-      // Pause outgoing after CSS fade completes to free decode resources
-      setTimeout(() => { outgoing.pause(); }, 2400);
-
-      // Schedule the next transition
-      setTimeout(transition, CLIP_MS);
-
-      // Preload the clip after next halfway through the current clip
-      setTimeout(() => {
-        setSrc(standby, PLAYLIST[(curIdx + 1) % PLAYLIST.length]);
-      }, PRELOAD_MS);
+      // Buffer the clip after next
+      preloadNext();
     }
 
     if (standby.readyState >= 3) {
       doFade();
     } else {
       standby.addEventListener('canplay', doFade, { once: true });
-      // Hard fallback — fade even if canplay is slow (rare on local files)
-      setTimeout(doFade, 3500);
+      setTimeout(doFade, 2000);
     }
   }
 
-  // Boot — slotA is already playing Commercial.mov from HTML autoplay
+  slotA.addEventListener('ended', onEnded);
+  slotB.addEventListener('ended', onEnded);
+
   slotA.classList.add('hero__video--active');
-  slotA.muted = true;
   slotA.play().catch(() => {});
 
-  // Immediately begin buffering Residential2.MOV into standby
-  setSrc(standby, PLAYLIST[1]);
-
-  // First transition fires after CLIP_MS
-  setTimeout(transition, CLIP_MS);
+  // Buffer next clip as soon as current starts
+  preloadNext();
 })();
