@@ -3,65 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional wheelie bin cleaning in New Zealand. Bin Revivals removes grime, bacteria and odours — leaving your bins fresh, sanitised and ready to go." />
-  <title>Bin Revivals | Professional Wheelie Bin Cleaning</title>
+  <meta name="description" content="Professional wheelie bin cleaning across Manawatū. Bin Revivals cleans, disinfects and deodorises bins for homes and businesses in Palmerston North, Feilding, Levin and throughout the region." />
+  <title>Bin Revivals | Professional Bin Cleaning Manawatū</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "#business",
+        "name": "Bin Revivals",
+        "description": "Professional wheelie bin cleaning, disinfection and deodorisation across the Manawatū region, New Zealand.",
+        "telephone": "+64279652607",
+        "email": "binrevivals@gmail.com",
+        "sameAs": ["https://facebook.com/BinRevivals","https://instagram.com/BinRevivals"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Palmerston North",
+          "addressRegion": "Manawatū-Whanganui",
+          "addressCountry": "NZ"
+        },
+        "geo": {"@type":"GeoCoordinates","latitude":-40.3523,"longitude":175.6082},
+        "priceRange": "$$",
+        "areaServed": "Manawatū Region, New Zealand",
+        "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"17:00"}]
+      },
+      {
+        "@type": "Service",
+        "name": "Professional Wheelie Bin Cleaning Manawatū",
+        "provider": {"@id": "#business"},
+        "areaServed": "Manawatū Region, New Zealand",
+        "description": "We remove grime, bacteria and odours from wheelie bins using eco-friendly products. One-off and monthly recurring services across Palmerston North, Feilding, Levin and the entire Manawatū region.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Bin Cleaning Services",
+          "itemListElement": [
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Single Bin Clean"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Monthly Recurring Clean"}}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="navbar">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo">
-        <img src="assets/images/logo-white.png" alt="Bin Revivals Logo" />
-      </a>
-      <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks">
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#book" class="nav__cta">Book a Clean</a></li>
-      </ul>
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-mobile-cta" id="stickyMobileCta">
+    <a href="#book" class="btn btn--primary">Book A Clean</a>
+    <a href="tel:0279652607" class="btn btn--ghost">📞 Call Now</a>
+  </div>
+
+  <!-- FLOATING QUOTE BUTTON -->
+  <a href="#book" class="floating-cta" id="floatingCta" aria-label="Get a free quote">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <span>Free Quote</span>
+  </a>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar" id="urgencyBar">
+    <div class="urgency-bar__inner">
+      <span class="urgency-bar__icon">⚡</span>
+      <p><strong>Limited Weekly Booking Availability</strong> — <a href="#book">Secure Your Spot Today &rarr;</a></p>
     </div>
-  </nav>
+    <button class="urgency-bar__close" id="urgencyClose" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- SITE HEADER: single fixed wrapper — nav + trust bar share one parent -->
+  <header class="site-header" id="siteHeader">
+
+    <nav class="nav" id="navbar">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals Logo" />
+        </a>
+        <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="service-areas.html">Service Areas</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#book" class="nav__cta">Get a Free Quote</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="nav-trust-bar" id="navTrustBar" role="complementary" aria-label="Trust signals">
+      <div class="container">
+        <div class="nav-trust-bar__inner">
+          <div class="nav-trust-bar__rating">
+            <span class="nav-trust-bar__stars">★★★★★</span>
+            <span class="nav-trust-bar__region">Trusted Across Manawatū Region</span>
+          </div>
+          <div class="nav-trust-bar__sep" aria-hidden="true"></div>
+          <div class="nav-trust-bar__points">
+            <span class="nav-trust-bar__point">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"/></svg>
+              Professional Bin Cleaning
+            </span>
+            <span class="nav-trust-bar__point">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Fully Insured
+            </span>
+            <span class="nav-trust-bar__point">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+              Eco-Friendly Cleaning
+            </span>
+            <span class="nav-trust-bar__point">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Reliable Service
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header><!-- /.site-header -->
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero__bg-pattern"></div>
-    <div class="hero__inner">
-      <div class="hero__content">
-        <div class="hero__badge">🇳🇿 Locally Owned &amp; Operated</div>
-        <h1 class="hero__headline">
-          Your Bins<br/>
-          <span class="hero__headline--accent">Stink.</span><br/>
-          We Fix That.
-        </h1>
-        <p class="hero__sub">Professional wheelie bin cleaning that removes grime, bacteria and that smell you've been ignoring. Fast, affordable, and done right at your door.</p>
-        <div class="hero__actions">
-          <a href="#book" class="btn btn--primary">Book a Clean</a>
-          <a href="tel:0279652607" class="btn btn--ghost">📞 027 965 2607</a>
-        </div>
-        <div class="hero__trust">
-          <div class="trust-pill">✓ Eco-Friendly Products</div>
-          <div class="trust-pill">✓ No Contracts</div>
-          <div class="trust-pill">✓ Done At Your Door</div>
-        </div>
-      </div>
-      <div class="hero__visual">
-        <div class="hero__logo-wrap">
-          <img src="assets/images/logo-green.png" alt="Bin Revivals" class="hero__logo-img" />
+    <!-- Hero Before-and-After Playlist (plays each video to completion, then crossfades) -->
+    <div class="hero__video-wrap">
+      <video class="hero__video hero__video--slot hero__video--active" id="heroVideoA"
+             src="Videos/Residential4.mov"
+             autoplay muted playsinline preload="auto"></video>
+      <video class="hero__video hero__video--slot" id="heroVideoB"
+             muted playsinline preload="none"></video>
+      <div class="hero__video-overlay"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="hero__body">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="hero__eyebrow-flag">🇳🇿</span>
+            Locally Owned &amp; Operated &mdash; Manawatū
+          </div>
+          <h1 class="hero__headline">
+            Manawatū's Trusted<br/>
+            <span class="hero__headline--accent">Bin Cleaning Specialists</span>
+          </h1>
+          <p class="hero__sub">We professionally clean, disinfect and deodorise your wheelie bins — eliminating odours, bacteria and grime for good. Done at your door across the entire Manawatū region.</p>
+          <div class="hero__actions">
+            <a href="#book" class="btn btn--primary btn--lg hero__cta-primary">Get A Free Quote</a>
+            <a href="#videos" class="btn btn--ghost btn--lg">See Real Results &darr;</a>
+          </div>
+          <div class="hero__badges">
+            <div class="hero__badge-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+              <span>Local Business</span>
+            </div>
+            <div class="hero__badge-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Fully Insured</span>
+            </div>
+            <div class="hero__badge-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+              <span>Eco-Friendly</span>
+            </div>
+            <div class="hero__badge-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <span>Reliable &amp; On-Time</span>
+            </div>
+            <div class="hero__badge-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+              <span>Pro Equipment</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-arrow"></div>
+
+    <!-- Stats row -->
+    <div class="hero__stats-bar">
+      <div class="container">
+        <div class="hero__stats-grid">
+          <div class="hero__stat">
+            <p class="hero__stat-number" data-target="1000" data-suffix="+">1000+</p>
+            <p class="hero__stat-label">Bins Cleaned</p>
+          </div>
+          <div class="hero__stat">
+            <p class="hero__stat-number">5-Star</p>
+            <p class="hero__stat-label">Service</p>
+          </div>
+          <div class="hero__stat">
+            <p class="hero__stat-number">100%</p>
+            <p class="hero__stat-label">Satisfaction Focused</p>
+          </div>
+          <div class="hero__stat">
+            <p class="hero__stat-number">Local</p>
+            <p class="hero__stat-label">Manawatū Business</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF STRIP -->
+  <section class="social-proof-strip">
+    <div class="container">
+      <div class="social-proof-strip__inner">
+        <div class="social-proof-item">
+          <div class="social-proof-item__stars">★★★★★</div>
+          <p class="social-proof-item__quote">"Absolutely incredible results. Bins look brand new!"</p>
+          <p class="social-proof-item__author">Sarah M. — Palmerston North</p>
+        </div>
+        <div class="social-proof-divider"></div>
+        <div class="social-proof-item">
+          <div class="social-proof-item__stars">★★★★★</div>
+          <p class="social-proof-item__quote">"Professional, fast and spotless. Highly recommend."</p>
+          <p class="social-proof-item__author">Mike T. — Feilding</p>
+        </div>
+        <div class="social-proof-divider"></div>
+        <div class="social-proof-item">
+          <div class="social-proof-item__stars">★★★★★</div>
+          <p class="social-proof-item__quote">"Best money I've spent on home maintenance this year."</p>
+          <p class="social-proof-item__author">Lisa R. — Levin</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -70,8 +239,114 @@
     <div class="container">
       <p class="problem-strip__text">
         <span>Bins are the most neglected part of your home.</span>
-        Bacteria. Maggots. Mould. Odours that spread to your whole property. Most people just live with it — until now.
+        Bacteria. Maggots. Mould. Odours that spread across your entire property. Most people just live with it — until now.
       </p>
+    </div>
+  </section>
+
+  <!-- VIDEO SHOWCASE -->
+  <section class="video-showcase" id="videos">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-label section-label--light">Real Results</p>
+        <h2 class="section-title">Watch Us Work</h2>
+        <p class="section-sub section-sub--light">Real jobs. Real transformations. See exactly what professional bin cleaning looks like.</p>
+      </div>
+      <div class="video-grid--homepage">
+        <div class="video-card video-card--autoplay"
+             data-video-src="Videos/Residential1.MOV"
+             data-title="Professional Deep Clean"
+             data-category-label="Bin Cleaning">
+          <div class="video-card__media">
+            <video class="video-card__video" muted loop playsinline preload="none"></video>
+            <div class="video-card__gradient"></div>
+            <div class="video-card__play-wrap">
+              <button class="video-card__play" aria-label="Watch video"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+            </div>
+            <div class="video-card__info">
+              <span class="video-card__category">Bin Cleaning</span>
+              <h3 class="video-card__title">Professional Deep Clean</h3>
+              <div class="video-card__meta">
+                <span class="video-card__location">📍 Palmerston North</span>
+                <span class="video-card__views">👁 <span class="views-count" data-target="1247">1,247</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card video-card--autoplay"
+             data-video-src="Videos/Residential4.mov"
+             data-title="Before &amp; After Transformation"
+             data-category-label="Before &amp; After">
+          <div class="video-card__media">
+            <video class="video-card__video" muted loop playsinline preload="none"></video>
+            <div class="video-card__gradient"></div>
+            <div class="video-card__play-wrap">
+              <button class="video-card__play" aria-label="Watch video"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+            </div>
+            <div class="video-card__info">
+              <span class="video-card__category">Before &amp; After</span>
+              <h3 class="video-card__title">Before &amp; After Transformation</h3>
+              <div class="video-card__meta">
+                <span class="video-card__location">📍 Feilding</span>
+                <span class="video-card__views">👁 <span class="views-count" data-target="2891">2,891</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-card video-card--autoplay"
+             data-video-src="Videos/Residential2.MOV"
+             data-title="Pressure Wash Results"
+             data-category-label="Pressure Washing">
+          <div class="video-card__media">
+            <video class="video-card__video" muted loop playsinline preload="none"></video>
+            <div class="video-card__gradient"></div>
+            <div class="video-card__play-wrap">
+              <button class="video-card__play" aria-label="Watch video"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+            </div>
+            <div class="video-card__info">
+              <span class="video-card__category">Pressure Washing</span>
+              <h3 class="video-card__title">Pressure Wash Results</h3>
+              <div class="video-card__meta">
+                <span class="video-card__location">📍 Manawatū</span>
+                <span class="video-card__views">👁 <span class="views-count" data-target="943">943</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-showcase__cta">
+        <a href="gallery.html" class="btn btn--primary">View Full Gallery &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW STRIP -->
+  <section class="review-strip">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What Customers Say</p>
+        <h2 class="section-title">Real People. Real Results.</h2>
+      </div>
+      <div class="review-strip__grid">
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Jacob turned up on time, did an incredible job on all three of our bins. They looked brand new. Absolutely stoked with the result — will definitely be booking monthly."</p>
+          <p class="review-card__author">Sarah M.</p>
+          <p class="review-card__location">📍 Palmerston North</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Had no idea bins could get this dirty. After the clean they were absolutely spotless and smelled incredible. No more holding my breath at bin night — brilliant service!"</p>
+          <p class="review-card__author">Mike T.</p>
+          <p class="review-card__location">📍 Feilding</p>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__text">"Super professional and fast. Came when they said they would and left the bins cleaner than we've ever seen them. Great value for money. Highly recommend Bin Revivals."</p>
+          <p class="review-card__author">Lisa R.</p>
+          <p class="review-card__location">📍 Levin</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -94,15 +369,70 @@
         <div class="step">
           <div class="step__number">02</div>
           <div class="step__icon">🚿</div>
-          <h3 class="step__title">We Come to You</h3>
-          <p class="step__desc">We show up, pull out our specialised cleaning equipment and get to work. No mess left behind — just fresh bins.</p>
+          <h3 class="step__title">We Clean &amp; Sanitise</h3>
+          <p class="step__desc">We arrive at your property with professional equipment. Thorough wash, disinfection and deodorisation — no mess left behind.</p>
         </div>
         <div class="step__connector"></div>
         <div class="step">
           <div class="step__number">03</div>
           <div class="step__icon">✅</div>
-          <h3 class="step__title">Fresh &amp; Done</h3>
-          <p class="step__desc">Your bins are washed, disinfected and deodorised. Ready to use. You won't believe the difference.</p>
+          <h3 class="step__title">Enjoy Fresh Bins</h3>
+          <p class="step__desc">Your bins are completely transformed — clean, sanitised and odour-free. You won't believe the difference until you see it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SECTION -->
+  <section class="trust-section" id="trust">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Why We're Different</p>
+        <h2 class="section-title">Built on Trust &amp; Results</h2>
+        <p class="section-sub">Every clean backed by professional equipment, eco-friendly products and a guarantee you'll love the result.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <h3 class="trust-card__title">Local Business</h3>
+          <p class="trust-card__desc">Proudly Manawatū-based. We're part of this community — our reputation is built here, one bin at a time.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="trust-card__title">Experienced Team</h3>
+          <p class="trust-card__desc">Years of hands-on bin cleaning experience. We know what works and deliver consistent, professional results every time.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M2 12h4M18 12h4M12 2v4M12 18v4"/></svg>
+          </div>
+          <h3 class="trust-card__title">Eco-Friendly Process</h3>
+          <p class="trust-card__desc">All cleaning products are environmentally safe. We protect your family, your pets and the Manawatū environment.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="trust-card__title">Reliable Scheduling</h3>
+          <p class="trust-card__desc">We turn up when we say we will. No cancellations, no delays. Consistent monthly scheduling you can count on.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          </div>
+          <h3 class="trust-card__title">Professional Equipment</h3>
+          <p class="trust-card__desc">Specialist bin cleaning equipment that reaches every surface. Far beyond what a garden hose can achieve.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <h3 class="trust-card__title">Satisfaction Guarantee</h3>
+          <p class="trust-card__desc">Not happy? We'll sort it. We stand behind our work 100% and won't rest until your bins are spotless.</p>
         </div>
       </div>
     </div>
@@ -120,32 +450,135 @@
         <div class="feature">
           <div class="feature__icon">🌿</div>
           <h3 class="feature__title">Eco-Friendly Products</h3>
-          <p class="feature__desc">We use environmentally safe cleaning solutions that are tough on grime but gentle on the planet.</p>
+          <p class="feature__desc">We use environmentally safe cleaning solutions that are tough on grime but gentle on the planet and safe for your family.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🦠</div>
           <h3 class="feature__title">Proper Disinfection</h3>
-          <p class="feature__desc">Not just a splash of water. We thoroughly wash, disinfect and deodorise every bin — bacteria doesn't stand a chance.</p>
+          <p class="feature__desc">Not just a splash of water. We thoroughly wash, disinfect and deodorise every bin — bacteria and mould don't stand a chance.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">📍</div>
           <h3 class="feature__title">Local &amp; Reliable</h3>
-          <p class="feature__desc">Locally owned and operated. We actually care about the job because this is our community too.</p>
+          <p class="feature__desc">Locally owned and operated right here in Manawatū. We actually care about the job because this is our community too.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">💸</div>
           <h3 class="feature__title">Honest Pricing</h3>
-          <p class="feature__desc">No hidden fees. No lock-in contracts. One-off or regular — you pick what works for you.</p>
+          <p class="feature__desc">No hidden fees. No lock-in contracts. One-off or regular — you pick what works for you and your budget.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🏠</div>
           <h3 class="feature__title">Done at Your Door</h3>
-          <p class="feature__desc">You don't move a thing. We come to your property and handle everything on-site.</p>
+          <p class="feature__desc">You don't move a thing. We come to your property and handle everything on-site — completely hassle-free.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🔄</div>
           <h3 class="feature__title">Flexible Service</h3>
-          <p class="feature__desc">Monthly recurring cleans or a one-off refresh — whatever your bins need, we've got it covered.</p>
+          <p class="feature__desc">Monthly recurring cleans or a one-off refresh — whatever your bins need, we've got it covered throughout Manawatū.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">By The Numbers</p>
+        <h2 class="section-title">Trusted Across Manawatū</h2>
+        <p class="section-sub">Over a thousand bins cleaned, hundreds of happy customers across the region.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card__icon">🪣</div>
+          <p class="stat-card__number" data-target="1000" data-suffix="+">1000+</p>
+          <p class="stat-card__label">Bins Cleaned</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon">🏆</div>
+          <p class="stat-card__number">5-Star</p>
+          <p class="stat-card__label">Service Rating</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon">😊</div>
+          <p class="stat-card__number">100%</p>
+          <p class="stat-card__label">Satisfaction Focused</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon">📍</div>
+          <p class="stat-card__number" data-target="23" data-suffix="+">23+</p>
+          <p class="stat-card__label">Service Areas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS PREVIEW -->
+  <section class="service-areas-preview" id="service-areas">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Coverage</p>
+        <h2 class="section-title">Serving All of Manawatū</h2>
+        <p class="section-sub">We provide residential and commercial bin cleaning across the entire Manawatū region — from Palmerston North to the coast.</p>
+      </div>
+      <div class="sa-regions">
+        <div class="sa-region">
+          <h3 class="sa-region__title">Palmerston North &amp; Suburbs</h3>
+          <div class="sa-chips">
+            <span class="sa-chip">Palmerston North</span>
+            <span class="sa-chip">Milson</span>
+            <span class="sa-chip">Kelvin Grove</span>
+            <span class="sa-chip">Terrace End</span>
+            <span class="sa-chip">Awapuni</span>
+            <span class="sa-chip">Hokowhitu</span>
+            <span class="sa-chip">Linton</span>
+          </div>
+        </div>
+        <div class="sa-region">
+          <h3 class="sa-region__title">Manawatū District</h3>
+          <div class="sa-chips">
+            <span class="sa-chip">Feilding</span>
+            <span class="sa-chip">Ashhurst</span>
+            <span class="sa-chip">Bunnythorpe</span>
+            <span class="sa-chip">Longburn</span>
+            <span class="sa-chip">Rongotea</span>
+            <span class="sa-chip">Halcombe</span>
+            <span class="sa-chip">Kairanga</span>
+            <span class="sa-chip">Tokomaru</span>
+          </div>
+        </div>
+        <div class="sa-region">
+          <h3 class="sa-region__title">Horowhenua &amp; Coast</h3>
+          <div class="sa-chips">
+            <span class="sa-chip">Levin</span>
+            <span class="sa-chip">Foxton</span>
+            <span class="sa-chip">Foxton Beach</span>
+            <span class="sa-chip">Shannon</span>
+            <span class="sa-chip">Himatangi</span>
+            <span class="sa-chip">Himatangi Beach</span>
+            <span class="sa-chip">Sanson</span>
+            <span class="sa-chip">Bulls</span>
+          </div>
+        </div>
+      </div>
+      <div class="sa-cta">
+        <a href="service-areas.html" class="btn btn--dark">View All Service Areas &rarr;</a>
+        <a href="#book" class="btn btn--primary">Book For My Area</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE CTA -->
+  <section class="showcase-cta">
+    <div class="container">
+      <div class="showcase-cta__inner">
+        <p class="section-label section-label--light">Ready?</p>
+        <h2 class="showcase-cta__headline">See Why Customers<br/>Choose <span>Bin Revivals</span></h2>
+        <p class="showcase-cta__sub">Real results. Real transformations. Professional bin cleaning that keeps homes and businesses across Manawatū cleaner, healthier and smelling fresh.</p>
+        <div class="showcase-cta__actions">
+          <a href="#book" class="btn btn--primary">Book a Clean</a>
+          <a href="#book" class="btn btn--ghost">Get a Free Quote</a>
         </div>
       </div>
     </div>
@@ -157,13 +590,13 @@
       <div class="section-header">
         <p class="section-label">Clear &amp; Simple</p>
         <h2 class="section-title">Pricing</h2>
-        <p class="section-sub">No guessing, no surprises. Just affordable, professional bin cleaning.</p>
+        <p class="section-sub">No guessing, no surprises. Just affordable, professional bin cleaning across Manawatū.</p>
       </div>
       <div class="pricing__cards">
         <div class="pricing__card">
           <div class="pricing__tag">One-Off</div>
           <h3 class="pricing__name">Single Clean</h3>
-          <p class="pricing__desc">Need a one-time deep clean? Perfect for a fresh start or moving in/out.</p>
+          <p class="pricing__desc">Need a one-time deep clean? Perfect for a fresh start, moving in/out, or trying us out.</p>
           <ul class="pricing__features">
             <li>✓ Full wash &amp; disinfect</li>
             <li>✓ Deodorise treatment</li>
@@ -201,15 +634,9 @@
         <div class="about__content">
           <p class="section-label">About Us</p>
           <h2 class="section-title">Clean Bins.<br/>Healthy Home.</h2>
-          <p class="about__text">
-            At Bin Revivals, we believe clean bins make a cleaner, healthier home. We're a locally owned and operated business built on doing the job properly — no shortcuts, no excuses.
-          </p>
-          <p class="about__text">
-            Whether you need a regular monthly clean or a one-off service, we show up, we do the work, and we leave your bins fresher than you've ever seen them. Friendly service, attention to detail, and pricing that actually makes sense.
-          </p>
-          <p class="about__text about__text--bold">
-            Jacob &amp; the Bin Revivals team.
-          </p>
+          <p class="about__text">At Bin Revivals, we believe clean bins make a cleaner, healthier home. We're a locally owned and operated Manawatū business built on doing the job properly — no shortcuts, no excuses.</p>
+          <p class="about__text">Whether you need a regular monthly clean or a one-off service anywhere across the Manawatū region, we show up, we do the work, and we leave your bins fresher than you've ever seen them.</p>
+          <p class="about__text about__text--bold">Jacob &amp; the Bin Revivals team.</p>
           <div class="about__actions">
             <a href="#book" class="btn btn--primary">Book a Clean</a>
             <a href="tel:0279652607" class="btn btn--outline">Call Us</a>
@@ -224,16 +651,14 @@
     <div class="container">
       <div class="section-header section-header--light">
         <p class="section-label section-label--light">Ready to Go?</p>
-        <h2 class="section-title">Book Your Clean</h2>
-        <p class="section-sub section-sub--light">Fill in the form and we'll get back to you ASAP. Usually same day.</p>
+        <h2 class="section-title">Get Your Free Quote</h2>
+        <p class="section-sub section-sub--light">Fill in the form and we'll get back to you ASAP. Usually same day across all of Manawatū.</p>
       </div>
       <div class="book__inner">
         <form class="book__form" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Replace YOUR_ACCESS_KEY_HERE with the Web3Forms key from web3forms.com -->
           <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-          <input type="hidden" name="subject" value="New Booking Request — Bin Revivals" />
+          <input type="hidden" name="subject" value="New Quote Request — Bin Revivals" />
           <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-
           <div class="form__row">
             <div class="form__group">
               <label for="name">Full Name *</label>
@@ -251,7 +676,7 @@
             </div>
             <div class="form__group">
               <label for="suburb">Suburb / Area *</label>
-              <input type="text" id="suburb" name="suburb" placeholder="Your suburb" required />
+              <input type="text" id="suburb" name="suburb" placeholder="e.g. Palmerston North" required />
             </div>
           </div>
           <div class="form__row">
@@ -261,6 +686,7 @@
                 <option value="" disabled selected>Select a service</option>
                 <option value="one-off">One-Off Clean</option>
                 <option value="monthly">Monthly Clean</option>
+                <option value="commercial">Commercial / Business</option>
                 <option value="unsure">Not Sure — Help Me Decide</option>
               </select>
             </div>
@@ -289,31 +715,19 @@
           <div class="contact-items">
             <a href="tel:0279652607" class="contact-item">
               <div class="contact-item__icon">📞</div>
-              <div>
-                <p class="contact-item__label">Phone</p>
-                <p class="contact-item__value">027 965 2607</p>
-              </div>
+              <div><p class="contact-item__label">Phone</p><p class="contact-item__value">027 965 2607</p></div>
             </a>
             <a href="mailto:binrevivals@gmail.com" class="contact-item">
               <div class="contact-item__icon">✉️</div>
-              <div>
-                <p class="contact-item__label">Email</p>
-                <p class="contact-item__value">Binrevivals@gmail.com</p>
-              </div>
+              <div><p class="contact-item__label">Email</p><p class="contact-item__value">Binrevivals@gmail.com</p></div>
             </a>
             <a href="https://facebook.com/BinRevivals" target="_blank" rel="noopener" class="contact-item">
               <div class="contact-item__icon">📘</div>
-              <div>
-                <p class="contact-item__label">Facebook</p>
-                <p class="contact-item__value">Bin Revivals</p>
-              </div>
+              <div><p class="contact-item__label">Facebook</p><p class="contact-item__value">Bin Revivals</p></div>
             </a>
             <a href="https://instagram.com/BinRevivals" target="_blank" rel="noopener" class="contact-item">
               <div class="contact-item__icon">📸</div>
-              <div>
-                <p class="contact-item__label">Instagram</p>
-                <p class="contact-item__value">@BinRevivals</p>
-              </div>
+              <div><p class="contact-item__label">Instagram</p><p class="contact-item__value">@BinRevivals</p></div>
             </a>
           </div>
         </div>
@@ -326,14 +740,15 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="assets/images/logo-white.png" alt="Bin Revivals" class="footer__logo" />
-          <p class="footer__tagline">Professional Wheelie Bin Cleaning</p>
+          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals" class="footer__logo" />
+          <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
-          <a href="#about">About</a>
-          <a href="#book">Book a Clean</a>
+          <a href="service-areas.html">Service Areas</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#book">Get a Quote</a>
         </div>
         <div class="footer__social">
           <a href="https://facebook.com/BinRevivals" target="_blank" rel="noopener" aria-label="Facebook">
@@ -345,11 +760,24 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2025 Bin Revivals. All rights reserved.</p>
+        <p>&copy; 2025 Bin Revivals. All rights reserved. Serving Manawatū, New Zealand.</p>
         <p class="footer__credit">Website by <a href="https://rastrick.com.au" target="_blank" rel="noopener">RASTRICK. MADE</a></p>
       </div>
     </div>
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox__inner">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close video">&times;</button>
+      <video class="lightbox__video" id="lightboxVideo" controls playsinline></video>
+      <div class="lightbox__caption">
+        <span class="lightbox__title" id="lightboxTitle"></span>
+        <span class="lightbox__category" id="lightboxCategory"></span>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
