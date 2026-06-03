@@ -2839,3 +2839,138 @@ body.urgency-hidden .hero {
 .site-header > .nav.scrolled {
   padding: 6px 0;
 }
+
+
+/* =========================================
+   TESTIMONIALS WITH SCREENSHOTS
+   ========================================= */
+.testimonials {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  border: 1px solid rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+}
+
+.testimonial-card__screenshot {
+  width: 100%;
+  display: block;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.testimonial-card__body {
+  padding: 22px 24px 24px;
+}
+
+.testimonial-card__stars {
+  color: #f59e0b;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.testimonial-card__quote {
+  font-size: 0.93rem;
+  color: var(--off-black);
+  line-height: 1.65;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.testimonial-card__author {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.testimonial-card__source {
+  font-size: 0.76rem;
+  color: #999;
+  margin-top: 3px;
+}
+
+@media (max-width: 900px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+}
+
+/* =========================================
+   SIMPLE PRICING
+   ========================================= */
+.pricing__simple {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.pricing__simple-card {
+  background: var(--white);
+  border: 2px solid var(--green-lime);
+  border-radius: 20px;
+  padding: 48px 56px;
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+}
+
+.pricing__simple-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--green-dark);
+  margin-bottom: 16px;
+}
+
+.pricing__simple-from {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.pricing__simple-price {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--off-black);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.pricing__note-inline {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .pricing__simple-card { padding: 36px 24px; }
+  .pricing__simple-price { font-size: 4rem; }
+}

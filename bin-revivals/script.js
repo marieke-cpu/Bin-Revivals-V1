@@ -239,7 +239,7 @@ function initViewCounters() {
 // ── SCROLL REVEAL FOR NEW SECTIONS ─────
 function initNewReveal() {
   const newEls = document.querySelectorAll(
-    '.video-card, .review-card, .stat-card, .showcase-cta__inner, .video-showcase .section-header'
+    '.video-card, .review-card, .stat-card, .testimonial-card, .showcase-cta__inner, .video-showcase .section-header'
   );
   if (!newEls.length) return;
 
