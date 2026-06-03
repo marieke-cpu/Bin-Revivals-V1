@@ -2459,9 +2459,8 @@ body.urgency-hidden .hero {
   object-fit: cover;
   display: block;
   opacity: 0;
-  transition: opacity 1.6s ease-in-out;
+  transition: opacity 2.2s ease-in-out;
   will-change: opacity;
-  /* Override the base .hero__video opacity: 0.45 */
 }
 
 .hero__video--active {

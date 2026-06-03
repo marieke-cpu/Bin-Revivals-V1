@@ -560,106 +560,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* =========================================
-   HERO BEFORE-AND-AFTER PLAYLIST
+   HERO VIDEO PLAYLIST
    =========================================
-   Each video plays from START TO FINISH before
-   crossfading to the next. Uses the video's
-   'ended' event — no timers, no interruptions.
-   After the last video the playlist loops back.
+   Timer-based rotation: each clip plays for
+   CLIP_MS milliseconds then crossfades smoothly
+   to the next. Preloading starts PRELOAD_MS
+   before the transition so the next clip is
+   always ready — no freeze, no black frames.
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
-    'Videos/Residential9.MOV',    // 9 MB
-    'Videos/Residential6.mov',    // 11 MB
-    'Videos/Residential12.MOV',   // 16 MB
+    'Videos/Commercial.mov',       // 41 MB
+    'Videos/Residential2.MOV',    // 31 MB
+    'Videos/Residential3.MOV',    // 13 MB
+    'Videos/Residential11.MOV',   // 16 MB
   ];
+
+  const CLIP_MS    = 10000;  // show each clip for 10 seconds
+  const PRELOAD_MS =  5000;  // begin buffering next clip 5 s before transition
 
   const slotA = document.getElementById('heroVideoA');
   const slotB = document.getElementById('heroVideoB');
-
-  // Nothing to do if the required elements aren't present
   if (!slotA || !slotB) return;
 
-  let curIdx  = 0;          // index of the currently playing video
-  let active  = slotA;      // slot currently visible
-  let standby = slotB;      // slot buffering the next video
-
-  // --- helpers -----------------------------------------------------------
+  let curIdx  = 0;
+  let active  = slotA;
+  let standby = slotB;
 
   function setSrc(el, src) {
-    // Only call load() if the source actually changes
     if (el.getAttribute('src') !== src) {
       el.setAttribute('src', src);
       el.load();
     }
   }
 
-  // Load the video AFTER the current one into the standby slot
-  function preloadNext() {
-    const nextSrc = PLAYLIST[(curIdx + 1) % PLAYLIST.length];
-    setSrc(standby, nextSrc);
-  }
-
-  // --- crossfade ---------------------------------------------------------
-
   function transition() {
     curIdx = (curIdx + 1) % PLAYLIST.length;
-    const nextSrc = PLAYLIST[curIdx];
-
-    // Ensure standby has the right content
-    setSrc(standby, nextSrc);
+    setSrc(standby, PLAYLIST[curIdx]);
 
     let fired = false;
-
     function doFade() {
       if (fired) return;
       fired = true;
 
-      // Start the new video from frame 0
       standby.currentTime = 0;
+      standby.muted = true;
       standby.play().catch(() => {});
 
-      // Simultaneous opacity swap → crossfade
+      // Crossfade: bring standby in, fade active out simultaneously
       standby.classList.add('hero__video--active');
       active.classList.remove('hero__video--active');
 
-      // Swap logical references
+      const outgoing = active;
       [active, standby] = [standby, active];
 
-      // Start buffering the video after next
-      // (wait for current fade to complete first)
-      setTimeout(preloadNext, 800);
+      // Pause outgoing after CSS fade completes to free decode resources
+      setTimeout(() => { outgoing.pause(); }, 2400);
+
+      // Schedule the next transition
+      setTimeout(transition, CLIP_MS);
+
+      // Preload the clip after next halfway through the current clip
+      setTimeout(() => {
+        setSrc(standby, PLAYLIST[(curIdx + 1) % PLAYLIST.length]);
+      }, PRELOAD_MS);
     }
 
-    // Ideal path: standby already has enough data
     if (standby.readyState >= 3) {
       doFade();
     } else {
-      // Otherwise wait for canplay, with a 2.5 s safety fallback
       standby.addEventListener('canplay', doFade, { once: true });
-      setTimeout(doFade, 2500);
+      // Hard fallback — fade even if canplay is slow (rare on local files)
+      setTimeout(doFade, 3500);
     }
   }
 
-  // --- event wiring ------------------------------------------------------
-
-  // Only the ACTIVE slot's 'ended' should trigger a transition
-  function onEnded(e) {
-    if (e.target !== active) return;
-    transition();
-  }
-
-  slotA.addEventListener('ended', onEnded);
-  slotB.addEventListener('ended', onEnded);
-
-  // --- boot --------------------------------------------------------------
-
-  // slotA already has src="Videos/Residential9.MOV" from HTML and is
-  // autoplaying — just make sure the active class is set and preload slot B
+  // Boot — slotA is already playing Commercial.mov from HTML autoplay
   slotA.classList.add('hero__video--active');
-  slotA.play().catch(() => {});   // no-op if autoplay already started
+  slotA.muted = true;
+  slotA.play().catch(() => {});
 
-  // Begin buffering Residential6.mov into slotB immediately so it is
-  // ready well before Residential9 finishes
-  setTimeout(preloadNext, 800);
+  // Immediately begin buffering Residential2.MOV into standby
+  setSrc(standby, PLAYLIST[1]);
+
+  // First transition fires after CLIP_MS
+  setTimeout(transition, CLIP_MS);
 })();
