@@ -3255,7 +3255,7 @@ body.urgency-hidden .hero {
      continuously. Close btn stays pinned.     */
   .urgency-bar {
     position: fixed !important;  /* never relative — always above nav */
-    padding: 8px 36px 8px 12px;
+    padding: 4px 30px 4px 10px;
     gap: 0;
     overflow: hidden;
   }
@@ -3265,7 +3265,7 @@ body.urgency-hidden .hero {
     min-width: 0;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 0.78rem;
+    font-size: 0.65rem;
     gap: 0;
     letter-spacing: 0.1px;
   }
@@ -3288,11 +3288,11 @@ body.urgency-hidden .hero {
   .urgency-bar__inner p { white-space: nowrap; }
   .urgency-bar__close {
     position: absolute;
-    right: 8px;
+    right: 6px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.1rem;
-    padding: 2px 4px;
+    font-size: 0.95rem;
+    padding: 1px 3px;
     z-index: 1;
     flex-shrink: 0;
   }
@@ -3305,11 +3305,11 @@ body.urgency-hidden .hero {
     box-shadow: 0 2px 24px rgba(0,0,0,0.55);
     padding: 0 !important;
   }
-  .nav__inner { height: 64px; }
-  /* Logo: fits the 64px bar */
+  .nav__inner { height: 80px; }
+  /* Logo: fits the 80px bar */
   .nav__logo img {
-    height: 46px;
-    max-width: 160px;
+    height: 60px;
+    max-width: 190px;
   }
   /* Burger lines — clearly visible on dark opaque bg */
   .nav__burger span { background: var(--white); }
