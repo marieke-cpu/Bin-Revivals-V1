@@ -1613,10 +1613,10 @@ body.urgency-hidden .nav { top: 0; }
    ========================================= */
 .hero {
   position: relative;
-  min-height: max(100vh, 780px); /* guarantee enough room for full content stack */
+  min-height: max(100vh, 780px);
   display: flex;
   flex-direction: column;
-  overflow: visible; /* explicit override of earlier rule — video-wrap clips the bg */
+  overflow: hidden; /* restored — stats bar is now outside the hero */
   background: var(--black);
   padding: 0;
 }
@@ -1756,13 +1756,14 @@ body.urgency-hidden .nav { top: 0; }
 
 /* Stats bar — bottom of hero */
 .hero__stats-bar {
+  /* Standalone section — no longer inside the hero flex container.
+     Normal document flow, sits between hero and reviews sections.   */
   position: relative;
-  z-index: 2;
-  background: rgba(0,0,0,0.65);
-  border-top: 1px solid rgba(255,255,255,0.07);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  z-index: 1;
+  background: rgba(13,13,13,0.96);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 20px 0;
+  width: 100%;
 }
 
 .hero__stats-grid {
@@ -2372,9 +2373,8 @@ body.urgency-hidden .nav-trust-bar {
    the three stacked fixed elements (urgency + nav + trust bar).
    JS sets the exact value; these are CSS fallbacks. */
 .hero {
-  height: 100vh;
-  min-height: 560px;
-  padding-top: 156px; /* fallback: ~40 urgency + ~72 nav + ~44 trust */
+  min-height: 100vh; /* min not strict height — content can push taller if needed */
+  padding-top: 156px; /* fallback: ~40 urgency + ~72 nav + ~44 trust (JS overrides) */
 }
 
 body.urgency-hidden .hero {
@@ -2404,9 +2404,9 @@ body.urgency-hidden .hero {
   margin-bottom: 28px;
 }
 
-/* Stats bar stays pinned to bottom of hero via flex layout */
+/* Stats bar — standalone section below hero, padding retained */
 .hero__stats-bar {
-  padding: 16px 0;
+  padding: 20px 0;
 }
 
 /* =========================================
@@ -2625,16 +2625,7 @@ body.urgency-hidden .hero {
   padding: 36px 0 32px;
 }
 
-/* Stats bar — bottom anchor, polished */
-.hero__stats-bar {
-  position: relative;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.65);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  padding: 16px 0;
-}
+/* Stats bar — standalone section, padding already set above */
 
 .hero__stats-grid {
   display: grid;
