@@ -2847,14 +2847,9 @@ body.urgency-hidden .hero {
 
 /* ── Responsive ───────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Hide trust bar: mobile header = nav bar only */
+  /* Hide trust bar: mobile header = single nav row */
   .site-header > .nav-trust-bar { display: none; }
-  /* Strip padding — height controlled by nav__inner fixed height */
-  .site-header > .nav { padding: 0; }
-  .site-header > .nav.scrolled { padding: 0; }
-  /* Fixed-height nav inner: logo left, burger right, 64px bar */
-  .site-header > .nav .nav__inner { height: 64px; }
-  /* nav must be the containing block so the dropdown anchors correctly */
+  /* Make nav the dropdown's containing block */
   .site-header > .nav { position: relative; }
 }
 
@@ -3240,6 +3235,12 @@ body.urgency-hidden .hero {
    Desktop experience is unchanged.
    ========================================= */
 
+/* Urgency bar marquee — smooth infinite scroll, no stutter at loop point */
+@keyframes urgency-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* 1 — FLOATING CTA
    Hidden on mobile & tablet — competes with
    sticky CTA and causes visual clutter.        */
@@ -3249,31 +3250,41 @@ body.urgency-hidden .hero {
 
 @media (max-width: 640px) {
 
-  /* ── 2. URGENCY BAR ─────────────────────
-     Slim announcement strip. Single line,
-     compact, professional not intrusive.       */
+  /* ── 2. URGENCY BAR — marquee ───────────
+     Fixed above navigation. Text scrolls
+     continuously. Close btn stays pinned.     */
   .urgency-bar {
-    padding: 5px 34px 5px 10px; /* right clearance for abs. close btn */
-    position: relative;
+    position: fixed !important;  /* never relative — always above nav */
+    padding: 8px 36px 8px 12px;
     gap: 0;
+    overflow: hidden;
   }
   .urgency-bar__icon { display: none; }
   .urgency-bar__inner {
-    font-size: 0.64rem;
-    letter-spacing: 0.1px;
-    flex-wrap: nowrap;
-    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.78rem;
     gap: 0;
-    max-width: 100%;
+    letter-spacing: 0.1px;
   }
-  .urgency-bar__inner p {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  /* Marquee track — JS inserts two copies for seamless looping */
+  .urgency-bar__track {
+    display: inline-flex;
+    align-items: center;
+    animation: urgency-marquee 22s linear infinite;
+    will-change: transform;
+  }
+  .urgency-bar__track-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-right: 80px;
     white-space: nowrap;
-    max-width: 100%;
+    flex-shrink: 0;
   }
+  .urgency-bar__inner p { white-space: nowrap; }
   .urgency-bar__close {
     position: absolute;
     right: 8px;
@@ -3281,53 +3292,59 @@ body.urgency-hidden .hero {
     transform: translateY(-50%);
     font-size: 1.1rem;
     padding: 2px 4px;
+    z-index: 1;
+    flex-shrink: 0;
   }
 
   /* ── 3. NAVIGATION ──────────────────────
-     Fully opaque bar — no video or content
-     visible behind nav on mobile.              */
+     Single row: logo left, burger right.
+     Height held by nav__inner fixed at 64px. */
   .nav {
     background: var(--off-black) !important;
     box-shadow: 0 2px 24px rgba(0,0,0,0.55);
-    padding: 8px 0 !important;
+    padding: 0 !important;
   }
-  /* Logo: right-sized for the compact mobile bar */
+  .nav__inner { height: 64px; }
+  /* Logo: fits the 64px bar */
   .nav__logo img {
-    height: 58px;
-    max-width: 170px;
+    height: 46px;
+    max-width: 160px;
   }
   /* Burger lines — clearly visible on dark opaque bg */
   .nav__burger span { background: var(--white); }
 
-  /* Slide-in nav panel — premium dark green-black */
+  /* Mobile menu — full-width dropdown below nav bar */
   .nav__links {
-    background: #0c160c !important;
-    padding: 88px 28px 48px;
-    gap: 4px;
-    overflow-y: auto;
+    background: rgba(6, 16, 7, 0.99) !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    overflow-y: visible !important;
   }
   .nav__links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
   .nav__links li:last-child { border-bottom: none; }
   .nav__links a {
     font-size: 1rem;
     display: block;
-    padding: 13px 0;
+    padding: 17px 24px;
     color: rgba(255,255,255,0.88);
   }
-  /* CTA link — full-width green button inside the panel */
+  /* CTA row — full-width green button at bottom of menu */
+  .nav__links-cta {
+    padding: 18px 24px 24px;
+    border-bottom: none !important;
+  }
   .nav__links .nav__cta {
     background: var(--green-lime) !important;
     color: var(--black) !important;
-    padding: 14px 20px !important;
+    padding: 15px 24px !important;
     border-radius: 8px;
     text-align: center;
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 16px;
-    font-size: 0.95rem !important;
+    margin-top: 0;
+    font-size: 1rem !important;
     font-weight: 700;
-    border-bottom: none !important;
   }
 
   /* Trust bar inside site-header — hidden on mobile.

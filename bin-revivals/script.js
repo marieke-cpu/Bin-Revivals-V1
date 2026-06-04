@@ -398,6 +398,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
+// ── URGENCY MARQUEE — mobile only ─────
+// Duplicates urgency bar content so the CSS animation loops seamlessly.
+(function initUrgencyMarquee() {
+  if (window.innerWidth > 640) return;
+  const inner = document.querySelector('.urgency-bar__inner');
+  if (!inner || inner.querySelector('.urgency-bar__track')) return;
+
+  const originalHTML = inner.innerHTML;
+
+  const track = document.createElement('div');
+  track.className = 'urgency-bar__track';
+
+  const copy1 = document.createElement('span');
+  copy1.className = 'urgency-bar__track-content';
+  copy1.innerHTML = originalHTML;
+
+  const copy2 = document.createElement('span');
+  copy2.className = 'urgency-bar__track-content';
+  copy2.setAttribute('aria-hidden', 'true');
+  copy2.innerHTML = originalHTML;
+
+  track.appendChild(copy1);
+  track.appendChild(copy2);
+  inner.innerHTML = '';
+  inner.appendChild(track);
+})();
+
 // ── STICKY MOBILE CTA ─────────────────
 (function initStickyCta() {
   const cta = document.getElementById('stickyMobileCta');
