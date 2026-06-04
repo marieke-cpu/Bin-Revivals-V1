@@ -1613,10 +1613,10 @@ body.urgency-hidden .nav { top: 0; }
    ========================================= */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: max(100vh, 780px); /* guarantee enough room for full content stack */
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible; /* explicit override of earlier rule — video-wrap clips the bg */
   background: var(--black);
   padding: 0;
 }
@@ -1685,7 +1685,7 @@ body.urgency-hidden .nav { top: 0; }
   align-items: center;
   position: relative;
   z-index: 2;
-  padding: 56px 0 72px;
+  padding: 48px 0 60px;
 }
 
 .hero__content { max-width: 680px; }
@@ -3128,4 +3128,55 @@ body.urgency-hidden .hero {
 }
 @media (max-width: 580px) {
   .keep-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* =========================================
+   HERO — SHORT VIEWPORT COMPRESSION
+   Tightens vertical rhythm on laptop screens
+   that are 860 px tall or shorter so the entire
+   content stack fits without clipping.
+   ========================================= */
+
+@media (max-height: 860px) {
+  .hero__body         { padding: 36px 0 48px; }
+  .hero__eyebrow      { margin-bottom: 18px; padding: 6px 14px; }
+  .hero__headline     { margin-bottom: 18px; }
+  .hero__sub          { margin-bottom: 24px; }
+  .hero__actions      { margin-bottom: 28px; }
+}
+
+@media (max-height: 720px) {
+  .hero__body         { padding: 24px 0 36px; }
+  .hero__eyebrow      { margin-bottom: 12px; }
+  .hero__headline     { font-size: clamp(3rem, 7vw, 5rem); margin-bottom: 12px; }
+  .hero__sub          { margin-bottom: 18px; font-size: 0.95rem; }
+  .hero__actions      { margin-bottom: 18px; gap: 10px; }
+  .hero__badges       { gap: 6px 12px; }
+  .hero__stat         { padding: 8px 12px; }
+  .hero__stat-number  { font-size: clamp(1.4rem, 3vw, 2rem); }
+  .hero__stats-bar    { padding: 12px 0; }
+}
+
+/* =========================================
+   HERO STATS BAR — RESPONSIVE
+   Ensures stats are always visible and never
+   clipped on tablet or mobile viewports.
+   ========================================= */
+
+/* 2-col on tablet (already set at 900px width, this adds height fallback) */
+@media (max-width: 640px) {
+  .hero__stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .hero__stat {
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 10px 12px;
+  }
+  /* Remove right border from even columns, bottom border from last row */
+  .hero__stat:nth-child(2n) { border-right: none; }
+  .hero__stat:nth-child(3),
+  .hero__stat:nth-child(4) { border-bottom: none; }
 }
