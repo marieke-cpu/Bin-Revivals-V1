@@ -16,7 +16,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="preload" as="video" href="Videos/Commercial.mov" />
+  <!-- Preload LCP image — logo is the largest above-fold element -->
+  <link rel="preload" as="image" href="assets/images/main-logo-web.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/images/main-logo-web.png">
 
   <script type="application/ld+json">
   {
@@ -224,7 +226,15 @@
     <nav class="nav" id="navbar">
       <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals logo — Professional Bin Cleaning Manawatū" />
+          <picture>
+            <source srcset="assets/images/main-logo-web.webp" type="image/webp">
+            <img src="assets/images/main-logo-web.png"
+                 alt="Bin Revivals logo — Professional Bin Cleaning Manawatū"
+                 width="600" height="600"
+                 fetchpriority="high"
+                 loading="eager"
+                 decoding="async" />
+          </picture>
         </a>
         <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -279,7 +289,7 @@
     <div class="hero__video-wrap">
       <video class="hero__video hero__video--slot hero__video--active" id="heroVideoA"
              src="Videos/Commercial.mov"
-             autoplay muted playsinline preload="auto"></video>
+             autoplay muted playsinline preload="metadata"></video>
       <video class="hero__video hero__video--slot" id="heroVideoB"
              muted playsinline preload="none"></video>
       <div class="hero__video-overlay"></div>
@@ -472,7 +482,7 @@
       </div>
       <div class="testimonials__grid">
         <div class="testimonial-card">
-          <img src="Reviews/Review3.jpeg" alt="Benson and Co Security recommends Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" />
+          <img src="Reviews/Review3.jpeg" alt="Benson and Co Security recommends Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" decoding="async" width="1179" height="514" />
           <div class="testimonial-card__body">
             <div class="testimonial-card__stars">★★★★★</div>
             <p class="testimonial-card__quote">"Jacob continues to do an amazing job cleaning our bins. It really is great value. We highly recommend this service."</p>
@@ -481,7 +491,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <img src="Reviews/Review2.jpeg" alt="Chicky M Hauraki reviews Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" />
+          <img src="Reviews/Review2.jpeg" alt="Chicky M Hauraki reviews Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" decoding="async" width="1178" height="1747" />
           <div class="testimonial-card__body">
             <div class="testimonial-card__stars">★★★★★</div>
             <p class="testimonial-card__quote">"Omg my bin smells amazing, like bubblegum. Thank you so much for the clean today. Will definitely keep you on."</p>
@@ -490,7 +500,7 @@
           </div>
         </div>
         <div class="testimonial-card">
-          <img src="Reviews/Review1.jpeg" alt="Lindy Crawford reviews Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" />
+          <img src="Reviews/Review1.jpeg" alt="Lindy Crawford reviews Bin Revivals on Facebook" class="testimonial-card__screenshot" loading="lazy" decoding="async" width="1178" height="1881" />
           <div class="testimonial-card__body">
             <div class="testimonial-card__stars">★★★★★</div>
             <p class="testimonial-card__quote">"Thank you Jacob, my bin looks and smells amazing! Awesome service."</p>
@@ -812,7 +822,15 @@
     <div class="container">
       <div class="about__inner">
         <div class="about__badge-wrap">
-          <img src="assets/images/2.png" alt="Bin Revivals locally owned bin cleaning business Manawatū" class="about__badge-img" />
+          <picture>
+            <source srcset="assets/images/about-badge-web.webp" type="image/webp">
+            <img src="assets/images/about-badge-web.png"
+                 alt="Bin Revivals locally owned bin cleaning business Manawatū"
+                 class="about__badge-img"
+                 width="800" height="800"
+                 loading="lazy"
+                 decoding="async" />
+          </picture>
         </div>
         <div class="about__content">
           <p class="section-label">About Us</p>
@@ -923,7 +941,15 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North" class="footer__logo" />
+          <picture>
+            <source srcset="assets/images/main-logo-web.webp" type="image/webp">
+            <img src="assets/images/main-logo-web.png"
+                 alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North"
+                 class="footer__logo"
+                 width="600" height="600"
+                 loading="lazy"
+                 decoding="async" />
+          </picture>
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
@@ -963,6 +989,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
