@@ -3180,3 +3180,134 @@ body.urgency-hidden .hero {
   .hero__stat:nth-child(3),
   .hero__stat:nth-child(4) { border-bottom: none; }
 }
+
+
+/* =========================================
+   MOBILE UX — CONVERSION & POLISH FIXES
+   All rules below are mobile-scoped only.
+   Desktop experience is unchanged.
+   ========================================= */
+
+/* 1 — FLOATING CTA
+   Hidden on mobile & tablet — competes with
+   sticky CTA and causes visual clutter.        */
+@media (max-width: 900px) {
+  .floating-cta { display: none !important; }
+}
+
+@media (max-width: 640px) {
+
+  /* ── 2. URGENCY BAR ─────────────────────
+     Slim announcement strip. Single line,
+     compact, professional not intrusive.       */
+  .urgency-bar {
+    padding: 5px 34px 5px 10px; /* right clearance for abs. close btn */
+    position: relative;
+    gap: 0;
+  }
+  .urgency-bar__icon { display: none; }
+  .urgency-bar__inner {
+    font-size: 0.64rem;
+    letter-spacing: 0.1px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    gap: 0;
+    max-width: 100%;
+  }
+  .urgency-bar__inner p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+  .urgency-bar__close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    padding: 2px 4px;
+  }
+
+  /* ── 3. NAVIGATION ──────────────────────
+     Fully opaque bar — no video or content
+     visible behind nav on mobile.              */
+  .nav {
+    background: var(--off-black) !important;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.55);
+    padding: 8px 0 !important;
+  }
+  /* Logo: right-sized for the compact mobile bar */
+  .nav__logo img {
+    height: 58px;
+    max-width: 170px;
+  }
+  /* Burger lines — clearly visible on dark opaque bg */
+  .nav__burger span { background: var(--white); }
+
+  /* Slide-in nav panel — premium dark green-black */
+  .nav__links {
+    background: #0c160c !important;
+    padding: 88px 28px 48px;
+    gap: 4px;
+    overflow-y: auto;
+  }
+  .nav__links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .nav__links li:last-child { border-bottom: none; }
+  .nav__links a {
+    font-size: 1rem;
+    display: block;
+    padding: 13px 0;
+    color: rgba(255,255,255,0.88);
+  }
+  /* CTA link — full-width green button inside the panel */
+  .nav__links .nav__cta {
+    background: var(--green-lime) !important;
+    color: var(--black) !important;
+    padding: 14px 20px !important;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 16px;
+    font-size: 0.95rem !important;
+    font-weight: 700;
+    border-bottom: none !important;
+  }
+
+  /* Trust bar inside site-header — hidden on mobile.
+     Stats bar in hero provides the same signals.     */
+  .nav-trust-bar { display: none; }
+
+  /* ── 4. HERO LAYOUT ─────────────────────
+     Clean hierarchy: Headline → Sub → CTAs
+     → Stats. Badges hidden (redundant with
+     stats bar). Eyebrow slimmed.               */
+  .hero__eyebrow {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+  }
+  /* Icon badge row hidden — stats bar covers same signals */
+  .hero__badges { display: none; }
+  /* Actions already stacked via existing rule — ensure margins */
+  .hero__actions { margin-bottom: 20px; gap: 10px; }
+
+  /* ── 5. STICKY MOBILE CTA ──────────────
+     Slimmer footprint. Stays visible but
+     no longer dominates the viewport.         */
+  .sticky-mobile-cta {
+    padding: 6px 10px;
+    gap: 8px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+  }
+  .sticky-mobile-cta .btn {
+    padding: 10px 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1px;
+  }
+
+}
