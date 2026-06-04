@@ -581,8 +581,14 @@ document.addEventListener('DOMContentLoaded', () => {
         hero.style.paddingTop = (urgencyH + siteHeader.offsetHeight) + 'px';
       }
     } else if (navFallback) {
-      // Other pages: just position the standalone nav
+      // Other pages: position nav below urgency bar
       navFallback.style.top = urgencyH + 'px';
+      // Pad the inner-page hero so its content clears the full header.
+      // Same logic as index.html: urgency height + nav height + breathing room.
+      const innerHero = document.querySelector('.page-hero');
+      if (innerHero) {
+        innerHero.style.paddingTop = (urgencyH + navFallback.offsetHeight + 24) + 'px';
+      }
     }
   }
 

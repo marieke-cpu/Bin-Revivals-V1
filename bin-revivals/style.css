@@ -1418,7 +1418,7 @@ ul { list-style: none; }
    GALLERY PAGE — HERO
    ========================================= */
 .gallery-hero {
-  padding: 140px 24px 64px;
+  padding: 210px 24px 64px; /* fallback: JS overrides via .page-hero inline style */
   background: linear-gradient(135deg, var(--green-dark) 0%, #0f2e12 60%, var(--black) 100%);
   text-align: center;
   position: relative;
@@ -1602,7 +1602,7 @@ ul { list-style: none; }
   .showcase-cta__actions .btn,
   .gallery-cta__actions .btn { width: 100%; max-width: 300px; justify-content: center; }
   .lightbox__caption { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .gallery-hero { padding: 120px 24px 48px; }
+  .gallery-hero { padding: 190px 24px 48px; } /* fallback before JS runs */
   .gallery-filters { top: 60px; }
 }
 
@@ -2096,7 +2096,7 @@ a.sa-chip:hover {
    SERVICE AREAS PAGE SHARED
    ========================================= */
 .sa-page-hero {
-  padding: 160px 24px 72px;
+  padding: 210px 24px 72px; /* fallback: JS overrides via .page-hero inline style */
   background: linear-gradient(135deg, var(--green-dark) 0%, #0f2e12 60%, var(--black) 100%);
   position: relative;
   overflow: hidden;
