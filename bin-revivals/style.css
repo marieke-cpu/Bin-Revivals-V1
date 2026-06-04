@@ -1190,9 +1190,10 @@ ul { list-style: none; }
 }
 
 .review-card__stars {
-  color: #f59e0b;
-  font-size: 1.1rem;
-  letter-spacing: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 0;
   margin-bottom: 14px;
 }
 
@@ -1889,9 +1890,10 @@ body.urgency-hidden .nav { top: 0; }
 }
 
 .social-proof-item__stars {
-  color: #f59e0b;
-  font-size: 1rem;
-  letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 0;
   margin-bottom: 8px;
 }
 
@@ -2387,10 +2389,10 @@ body.urgency-hidden .nav-trust-bar {
 }
 
 .nav-trust-bar__stars {
-  color: #f59e0b;
-  font-size: 0.78rem;
-  letter-spacing: 1.5px;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  line-height: 0;
 }
 
 .nav-trust-bar__region {
@@ -2496,7 +2498,7 @@ body.urgency-hidden .hero {
   .nav-trust-bar { padding: 6px 0; }
   .nav-trust-bar__region { display: none; }
   .nav-trust-bar__rating { gap: 4px; }
-  .nav-trust-bar__stars { font-size: 0.75rem; letter-spacing: 1px; }
+  .nav-trust-bar__stars { gap: 1px; }
   .nav-trust-bar__point:nth-child(n+3) { display: none; }
   .nav-trust-bar__rating::after {
     content: "Trusted Across Manawatū";
@@ -2945,9 +2947,10 @@ body.urgency-hidden .hero {
 }
 
 .testimonial-card__stars {
-  color: #f59e0b;
-  font-size: 1.05rem;
-  letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 0;
   margin-bottom: 10px;
 }
 
@@ -3168,7 +3171,7 @@ body.urgency-hidden .hero {
 }
 .keep-item:last-child { border-right: none; }
 
-.keep-item__icon { font-size: 2.2rem; margin-bottom: 14px; }
+.keep-item__icon { color: var(--green-lime); line-height: 0; margin-bottom: 14px; }
 
 .keep-item__title {
   font-family: var(--font-display);
