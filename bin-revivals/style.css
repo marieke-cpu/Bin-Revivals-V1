@@ -3235,10 +3235,10 @@ body.urgency-hidden .hero {
    Desktop experience is unchanged.
    ========================================= */
 
-/* Urgency bar marquee — smooth infinite scroll, no stutter at loop point */
+/* Urgency bar marquee — JS sets --mq-offset to exact physical-pixel width */
 @keyframes urgency-marquee {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(var(--mq-offset, -50%)); }
 }
 
 /* 1 — FLOATING CTA
@@ -3269,11 +3269,12 @@ body.urgency-hidden .hero {
     gap: 0;
     letter-spacing: 0.1px;
   }
-  /* Marquee track — JS inserts two copies for seamless looping */
+  /* Marquee track — paused until JS measures exact copy width */
   .urgency-bar__track {
     display: inline-flex;
     align-items: center;
     animation: urgency-marquee 22s linear infinite;
+    animation-play-state: paused;
     will-change: transform;
   }
   .urgency-bar__track-content {

@@ -399,7 +399,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ── URGENCY MARQUEE — mobile only ─────
-// Duplicates urgency bar content so the CSS animation loops seamlessly.
+// Two identical copies scroll via CSS animation. Animation is paused until
+// we measure the exact physical-pixel width of one copy — avoids the
+// sub-pixel jump that occurs when using translateX(-50%) on high-DPR screens.
 (function initUrgencyMarquee() {
   if (window.innerWidth > 640) return;
   const inner = document.querySelector('.urgency-bar__inner');
@@ -423,6 +425,23 @@ document.addEventListener('DOMContentLoaded', () => {
   track.appendChild(copy2);
   inner.innerHTML = '';
   inner.appendChild(track);
+
+  function start() {
+    const w = copy1.getBoundingClientRect().width;
+    if (!w) { requestAnimationFrame(start); return; }
+    // Round to nearest physical pixel so the loop point is exact
+    const dpr = window.devicePixelRatio || 1;
+    const exact = Math.round(w * dpr) / dpr;
+    track.style.setProperty('--mq-offset', '-' + exact + 'px');
+    track.style.animationPlayState = 'running';
+  }
+
+  // Wait for web fonts to load before measuring — font affects text width
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { requestAnimationFrame(start); });
+  } else {
+    requestAnimationFrame(start);
+  }
 })();
 
 // ── STICKY MOBILE CTA ─────────────────
