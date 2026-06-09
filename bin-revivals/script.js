@@ -620,9 +620,9 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
-    'Videos/Commercial.mov',
+    'Videos/Residential1.MOV',
     'Videos/Residential2.MOV',
-    'Videos/Residential3.MOV',
+    'Videos/Residential4.mov',
     'Videos/Residential11.MOV',
   ];
 
