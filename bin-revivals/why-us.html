@@ -9,12 +9,20 @@
   <meta property="og:title" content="Why Choose Bin Revivals | Trusted Bin Cleaning Manawatū" />
   <meta property="og:description" content="Real reviews, eco-friendly products, professional equipment and a satisfaction guarantee. Find out why locals trust Bin Revivals." />
   <meta property="og:image" content="https://binrevivals.co.nz/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="3750" />
+  <meta property="og:image:height" content="1969" />
+  <meta property="og:image:alt" content="Bin Revivals — Trusted bin cleaning across Manawatū. Eco-friendly, 5-star rated, locally owned." />
   <meta name="description" content="Eco-friendly products, professional equipment, real reviews and a satisfaction guarantee. Find out why Manawatū homeowners trust Bin Revivals for bin cleaning." />
   <title>Why Choose Bin Revivals | Trusted Bin Cleaning Manawatū</title>
   <meta property="og:url" content="https://binrevivals.co.nz/why-us.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1a4a1e" />
+  <link rel="icon" href="assets/images/Main%20Website%20Logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/Main%20Website%20Logo.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
@@ -23,7 +31,7 @@
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "#business",
+        "@id": "https://binrevivals.co.nz/#business",
         "name": "Bin Revivals",
         "description": "Professional wheelie bin cleaning across the Manawatū region. Locally owned, eco-friendly, reliable.",
         "telephone": "+64279652607",
@@ -82,7 +90,12 @@
   <nav class="nav" id="navbar">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals logo — Professional Bin Cleaning Manawatū" />
+                  <img src="assets/images/Main%20Website%20Logo.png"
+               alt="Bin Revivals logo — Professional Bin Cleaning Manawatū"
+               width="600" height="600"
+               fetchpriority="high"
+               loading="eager"
+               decoding="async" />
       </a>
       <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -90,7 +103,7 @@
       <ul class="nav__links" id="navLinks">
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
-        <li><a href="why-us.html" style="color:var(--green-lime)">Why Choose Us</a></li>
+        <li><a href="why-us.html" style="color:var(--green-lime)" aria-current="page">Why Choose Us</a></li>
         <li><a href="service-areas.html">Service Areas</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="index.html#book" class="nav__cta">Get a Free Quote</a></li>
@@ -375,7 +388,12 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North" class="footer__logo" />
+                      <img src="assets/images/Main%20Website%20Logo.png"
+                 alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North"
+                 class="footer__logo"
+                 width="600" height="600"
+                 loading="lazy"
+                 decoding="async" />
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
@@ -402,6 +420,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

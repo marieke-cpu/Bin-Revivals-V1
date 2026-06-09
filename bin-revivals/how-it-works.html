@@ -9,12 +9,20 @@
   <meta property="og:title" content="How Our Bin Cleaning Works | Bin Revivals Manawatū" />
   <meta property="og:description" content="Book online, we clean at your door, enjoy fresh odour-free bins. Four simple steps. Professional bin cleaning across Manawatū." />
   <meta property="og:image" content="https://binrevivals.co.nz/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="3750" />
+  <meta property="og:image:height" content="1969" />
+  <meta property="og:image:alt" content="Bin Revivals — Professional bin cleaning across Manawatū. Simple 4-step process. Done at your door." />
   <meta name="description" content="See how Bin Revivals works — book online, we clean at your door, enjoy fresh bins. Professional bin cleaning across Palmerston North and Manawatū. Book today." />
   <title>How Our Bin Cleaning Works | Bin Revivals Manawatū</title>
   <meta property="og:url" content="https://binrevivals.co.nz/how-it-works.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1a4a1e" />
+  <link rel="icon" href="assets/images/Main%20Website%20Logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/Main%20Website%20Logo.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
@@ -23,7 +31,7 @@
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "#business",
+        "@id": "https://binrevivals.co.nz/#business",
         "name": "Bin Revivals",
         "telephone": "+64279652607",
         "email": "binrevivals@gmail.com",
@@ -54,7 +62,7 @@
           {"@type":"Question","name":"How long does a bin clean take?","acceptedAnswer":{"@type":"Answer","text":"A standard residential clean of 1–3 bins takes approximately 15–20 minutes including the full wash, sanitisation and deodorising treatment."}},
           {"@type":"Question","name":"Do I need to be home during the service?","acceptedAnswer":{"@type":"Answer","text":"No. As long as your bins are accessible we can complete the clean without you being home. We'll let you know when we're done."}},
           {"@type":"Question","name":"Can you clean very dirty or neglected bins?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Our professional equipment handles even severely neglected bins. If a bin requires extra attention we'll let you know — there's no additional charge for standard dirty bins."}},
-          {"@type":"Question","name":"Do you clean all types of bins?","acceptedAnswer":{"@type":"Answer","text":"Yes — general waste, recycling, food scraps and commercial bins. If you have a wheelie bin, we can clean it."}},
+          {"@type":"Question","name":"Do you clean all types of bins?","acceptedAnswer":{"@type":"Answer","text":"Yes — general waste bins, recycling bins and food scraps bins. For commercial properties we currently service 240L wheelie bins. If you have a residential wheelie bin, we can clean it."}},
           {"@type":"Question","name":"What happens on collection day?","acceptedAnswer":{"@type":"Answer","text":"For monthly services, we schedule your clean after your regular collection day so bins are cleaned fresh after being emptied. This gives the best results."}}
         ]
       }
@@ -102,14 +110,19 @@
   <nav class="nav" id="navbar">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals logo — Professional Bin Cleaning Manawatū" />
+                  <img src="assets/images/Main%20Website%20Logo.png"
+               alt="Bin Revivals logo — Professional Bin Cleaning Manawatū"
+               width="600" height="600"
+               fetchpriority="high"
+               loading="eager"
+               decoding="async" />
       </a>
       <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks">
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="how-it-works.html" style="color:var(--green-lime)">How It Works</a></li>
+        <li><a href="how-it-works.html" style="color:var(--green-lime)" aria-current="page">How It Works</a></li>
         <li><a href="why-us.html">Why Choose Us</a></li>
         <li><a href="service-areas.html">Service Areas</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -321,7 +334,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">Do you clean all types of bins? <span class="faq-icon">+</span></button>
-          <div class="faq-answer"><p>Yes — general waste bins, recycling bins, food scraps bins and commercial bins. If you have a wheelie bin, we can clean it. We also service shared waste areas for commercial properties and apartment complexes.</p></div>
+          <div class="faq-answer"><p>Yes — general waste bins, recycling bins and food scraps bins. For commercial properties we currently service 240L wheelie bins. Contact us to discuss your needs and we'll confirm if we can help.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-question">How do I book? <span class="faq-icon">+</span></button>
@@ -364,7 +377,12 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North" class="footer__logo" />
+                      <img src="assets/images/Main%20Website%20Logo.png"
+                 alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North"
+                 class="footer__logo"
+                 width="600" height="600"
+                 loading="lazy"
+                 decoding="async" />
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
@@ -391,6 +409,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

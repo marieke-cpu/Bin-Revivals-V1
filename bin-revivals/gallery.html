@@ -9,12 +9,20 @@
   <meta property="og:title" content="Bin Cleaning Results Gallery | Before &amp; After | Bin Revivals" />
   <meta property="og:description" content="Real before and after bin cleaning results from across Manawatū. Watch Bin Revivals in action and see what professional cleaning actually looks like." />
   <meta property="og:image" content="https://binrevivals.co.nz/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="3750" />
+  <meta property="og:image:height" content="1969" />
+  <meta property="og:image:alt" content="Bin Revivals — Real before and after bin cleaning results from across Manawatū." />
   <meta name="description" content="Watch Bin Revivals in action. Real before and after bin cleaning results from across the Manawatū region. See what professional bin cleaning actually looks like." />
   <title>Bin Cleaning Results Gallery | Before &amp; After | Bin Revivals</title>
   <meta property="og:url" content="https://binrevivals.co.nz/gallery.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1a4a1e" />
+  <link rel="icon" href="assets/images/Main%20Website%20Logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/Main%20Website%20Logo.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
@@ -161,7 +169,12 @@
   <nav class="nav" id="navbar">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals logo — Professional Bin Cleaning Manawatū" />
+                  <img src="assets/images/Main%20Website%20Logo.png"
+               alt="Bin Revivals logo — Professional Bin Cleaning Manawatū"
+               width="600" height="600"
+               fetchpriority="high"
+               loading="eager"
+               decoding="async" />
       </a>
       <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -171,7 +184,7 @@
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="why-us.html">Why Choose Us</a></li>
         <li><a href="service-areas.html">Service Areas</a></li>
-        <li><a href="gallery.html" style="color:var(--green-lime)">Gallery</a></li>
+        <li><a href="gallery.html" style="color:var(--green-lime)" aria-current="page">Gallery</a></li>
         <li><a href="index.html#book" class="nav__cta">Get a Free Quote</a></li>
       </ul>
     </div>
@@ -538,7 +551,12 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <img src="assets/images/Main%20Website%20Logo.png" alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North" class="footer__logo" />
+                      <img src="assets/images/Main%20Website%20Logo.png"
+                 alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North"
+                 class="footer__logo"
+                 width="600" height="600"
+                 loading="lazy"
+                 decoding="async" />
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
@@ -578,7 +596,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {

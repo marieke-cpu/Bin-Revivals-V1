@@ -9,16 +9,23 @@
   <meta property="og:title" content="Bin Revivals | Wheelie Bin Cleaning Palmerston North &amp; Manawatū" />
   <meta property="og:description" content="Professional wheelie bin cleaning from $25. Residential and commercial service across Palmerston North, Feilding, Levin and all of Manawatū." />
   <meta property="og:image" content="https://binrevivals.co.nz/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="3750" />
+  <meta property="og:image:height" content="1969" />
+  <meta property="og:image:alt" content="Bin Revivals — Professional Wheelie Bin Cleaning across Manawatū, New Zealand. From $25/month." />
   <meta name="description" content="Professional wheelie bin cleaning in Palmerston North and across Manawatū. Bin Revivals removes grime, bacteria and odours from $25. Book your clean today." />
   <title>Bin Revivals | Wheelie Bin Cleaning Palmerston North &amp; Manawatū</title>
   <meta property="og:url" content="https://binrevivals.co.nz/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1a4a1e" />
+  <link rel="icon" href="assets/images/Main%20Website%20Logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.web3forms.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="style.css" />
   <!-- Preload LCP image — logo is the largest above-fold element -->
-  <link rel="preload" as="image" href="assets/images/main-logo-web.webp" type="image/webp">
-  <link rel="preload" as="image" href="assets/images/main-logo-web.png">
+  <link rel="preload" as="image" href="assets/images/Main%20Website%20Logo.png" type="image/png" fetchpriority="high">
 
   <script type="application/ld+json">
   {
@@ -226,15 +233,12 @@
     <nav class="nav" id="navbar">
       <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-          <picture>
-            <source srcset="assets/images/main-logo-web.webp" type="image/webp">
-            <img src="assets/images/main-logo-web.png"
+                      <img src="assets/images/Main%20Website%20Logo.png"
                  alt="Bin Revivals logo — Professional Bin Cleaning Manawatū"
                  width="600" height="600"
                  fetchpriority="high"
                  loading="eager"
                  decoding="async" />
-          </picture>
         </a>
         <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -788,7 +792,6 @@
                  width="800" height="800"
                  loading="lazy"
                  decoding="async" />
-          </picture>
         </div>
         <div class="about__content">
           <p class="section-label">About Us</p>
@@ -821,21 +824,21 @@
           <div class="form__row">
             <div class="form__group">
               <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
             </div>
             <div class="form__group">
               <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="027 XXX XXXX" required />
+              <input type="tel" id="phone" name="phone" placeholder="027 XXX XXXX" autocomplete="tel" inputmode="tel" required />
             </div>
           </div>
           <div class="form__row">
             <div class="form__group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" />
+              <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" inputmode="email" />
             </div>
             <div class="form__group">
               <label for="suburb">Suburb / Area *</label>
-              <input type="text" id="suburb" name="suburb" placeholder="e.g. Palmerston North" required />
+              <input type="text" id="suburb" name="suburb" placeholder="e.g. Palmerston North" autocomplete="address-level2" required />
             </div>
           </div>
           <div class="form__row">
@@ -899,15 +902,12 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-          <picture>
-            <source srcset="assets/images/main-logo-web.webp" type="image/webp">
-            <img src="assets/images/main-logo-web.png"
+                      <img src="assets/images/Main%20Website%20Logo.png"
                  alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North"
                  class="footer__logo"
                  width="600" height="600"
                  loading="lazy"
                  decoding="async" />
-          </picture>
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">

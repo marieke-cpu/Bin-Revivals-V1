@@ -154,11 +154,12 @@ ul { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 16px 0;
+  background: var(--black);
   transition: background var(--transition), box-shadow var(--transition);
 }
 .nav.scrolled {
   background: var(--off-black);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
   padding: 10px 0;
 }
 
