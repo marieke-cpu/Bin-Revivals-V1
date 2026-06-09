@@ -17,10 +17,10 @@
   <meta property="og:url" content="https://binrevivals.co.nz/gallery.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#1a4a1e" />
-  <link rel="icon" href="assets/images/Main%20Website%20Logo.png" type="image/png" />
+  <link rel="icon" href="assets/images/main-logo-web.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="assets/images/Main%20Website%20Logo.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/main-logo-web.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="style.css" />
@@ -169,12 +169,15 @@
   <nav class="nav" id="navbar">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-                  <img src="assets/images/Main%20Website%20Logo.png"
+                  <picture>
+                  <source srcset="assets/images/main-logo-web.webp" type="image/webp">
+                  <img src="assets/images/main-logo-web.png"
                alt="Bin Revivals logo — Professional Bin Cleaning Manawatū"
                width="600" height="600"
                fetchpriority="high"
                loading="eager"
                decoding="async" />
+                  </picture>
       </a>
       <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -551,12 +554,15 @@
     <div class="container">
       <div class="footer__inner">
         <div class="footer__brand">
-                      <img src="assets/images/Main%20Website%20Logo.png"
+                      <picture>
+                      <source srcset="assets/images/main-logo-web.webp" type="image/webp">
+                      <img src="assets/images/main-logo-web.png"
                  alt="Bin Revivals — Wheelie Bin Cleaning Palmerston North"
                  class="footer__logo"
                  width="600" height="600"
                  loading="lazy"
                  decoding="async" />
+                      </picture>
           <p class="footer__tagline">Professional Bin Cleaning — Manawatū</p>
         </div>
         <div class="footer__links">
