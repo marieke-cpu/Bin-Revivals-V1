@@ -2977,14 +2977,50 @@ body.urgency-hidden .hero {
   margin-top: 3px;
 }
 
+/* Dot indicators — hidden on desktop */
+.testimonials__dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.testimonials__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.testimonials__dot.active {
+  background: var(--green-dark);
+  transform: scale(1.35);
+}
+
 @media (max-width: 900px) {
   .testimonials__grid {
-    grid-template-columns: 1fr;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 16px;
+    padding: 0 24px 8px;
+    margin: 40px -24px 0;
+    max-width: none;
+    grid-template-columns: unset;
   }
+  .testimonials__grid::-webkit-scrollbar { display: none; }
+  .testimonials__grid .testimonial-card {
+    flex: 0 0 85vw;
+    max-width: 380px;
+    scroll-snap-align: start;
+  }
+  .testimonials__dots { display: flex; }
 }
 
 /* =========================================

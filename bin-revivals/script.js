@@ -606,6 +606,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.fonts) document.fonts.ready.then(update);
 })();
 
+// ── TESTIMONIALS SWIPE DOTS ───────────────
+(function () {
+  const grid = document.getElementById('testimonialsGrid');
+  const dots = document.querySelectorAll('.testimonials__dot');
+  if (!grid || !dots.length) return;
+
+  function activeDotIndex() {
+    const cards = grid.querySelectorAll('.testimonial-card');
+    let closest = 0, minDist = Infinity;
+    cards.forEach((card, i) => {
+      const dist = Math.abs(card.getBoundingClientRect().left - grid.getBoundingClientRect().left);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    return closest;
+  }
+
+  function updateDots() {
+    const idx = activeDotIndex();
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+
+  grid.addEventListener('scroll', updateDots, { passive: true });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const cards = grid.querySelectorAll('.testimonial-card');
+      if (cards[i]) cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    });
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   // V2 IIFE functions above run immediately — this block is intentionally empty.
 });
