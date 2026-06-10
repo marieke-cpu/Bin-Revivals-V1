@@ -2025,6 +2025,13 @@ a.sa-chip:hover {
   flex-wrap: wrap;
 }
 
+.sa-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
 /* =========================================
    STICKY MOBILE CTA
    ========================================= */
@@ -2267,6 +2274,7 @@ a.sa-chip:hover {
   .hero__stats-grid { grid-template-columns: repeat(2, 1fr); }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .sa-regions { grid-template-columns: 1fr; gap: 24px; }
+  .sa-locations-grid { grid-template-columns: repeat(2, 1fr); }
   .social-proof-strip__inner { flex-direction: column; gap: 0; }
   .social-proof-divider { width: 80%; height: 1px; margin: 0 auto; }
   .location-benefits { grid-template-columns: repeat(2, 1fr); }
@@ -2286,7 +2294,11 @@ a.sa-chip:hover {
   .hero__badges { gap: 8px 14px; }
   .hero__stats-grid { grid-template-columns: repeat(2, 1fr); }
   .trust-grid { grid-template-columns: 1fr; }
+  .trust-card { padding: 28px 20px; }
   .sa-regions { grid-template-columns: 1fr; }
+  .sa-locations-grid { grid-template-columns: 1fr; }
+  .sa-page-hero__actions { flex-direction: column; align-items: stretch; }
+  .sa-page-hero__actions .btn { text-align: center; justify-content: center; }
   .location-benefits { grid-template-columns: 1fr; }
   .floating-cta { bottom: 80px; right: 16px; }
   .sticky-mobile-cta { padding: 10px 12px; }
