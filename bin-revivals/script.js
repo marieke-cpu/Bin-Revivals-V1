@@ -662,10 +662,10 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
-    'Videos/Residential1.MOV',
-    'Videos/Residential2.MOV',
-    'Videos/Residential4.mov',
-    'Videos/Residential11.MOV',
+    'Videos/Residential1.mp4',
+    'Videos/Residential2.mp4',
+    'Videos/Residential4.mp4',
+    'Videos/Residential11.mp4',
   ];
 
   const slotA = document.getElementById('heroVideoA');
