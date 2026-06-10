@@ -2533,10 +2533,20 @@ body.urgency-hidden .hero {
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
   will-change: opacity;
+  pointer-events: none;
 }
 
 .hero__video--active {
-  opacity: 0.62; /* ~38% lighter than the original 0.45 */
+  opacity: 0.62;
+}
+
+/* Suppress browser's native play overlay on all platforms */
+.hero__video--slot::-webkit-media-controls,
+.hero__video--slot::-webkit-media-controls-start-playback-button,
+.hero__video--slot::-webkit-media-controls-play-button,
+.hero__video--slot::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
 }
 
 /* ── 2. LIGHTER OVERLAY ──────────────────────────────────────────────

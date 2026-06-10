@@ -485,20 +485,31 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle();
 })();
 
-// ── HERO VIDEO FALLBACK ───────────────
+// ── HERO VIDEO MOBILE FIX ────────────
 (function initHeroVideo() {
-  const video = document.querySelector('.hero__video');
-  if (!video) return;
+  const slotA = document.getElementById('heroVideoA');
+  const slotB = document.getElementById('heroVideoB');
+  if (!slotA) return;
 
-  video.addEventListener('error', () => {
-    const wrap = video.closest('.hero__video-wrap');
-    if (wrap) {
-      wrap.style.background = 'linear-gradient(135deg, #1a4a1e 0%, #0f2e12 100%)';
-    }
-  });
+  const wrap = document.querySelector('.hero__video-wrap');
 
-  video.addEventListener('canplay', () => {
-    video.style.opacity = '0.45';
+  function showFallback() {
+    if (wrap) wrap.style.background = 'linear-gradient(135deg, #1a4a1e 0%, #0f2e12 100%)';
+    slotA.style.display = 'none';
+    if (slotB) slotB.style.display = 'none';
+  }
+
+  slotA.addEventListener('error', showFallback);
+  if (slotB) slotB.addEventListener('error', showFallback);
+
+  // Belt-and-suspenders play attempt (autoplay attr should handle it,
+  // but some mobile browsers need an explicit .play() call)
+  slotA.play().catch(() => {
+    // On first touch, retry — covers iOS browsers that require a gesture
+    document.addEventListener('touchstart', function handler() {
+      slotA.play().catch(showFallback);
+      document.removeEventListener('touchstart', handler);
+    }, { once: true, passive: true });
   });
 })();
 
