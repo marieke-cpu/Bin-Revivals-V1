@@ -485,33 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle();
 })();
 
-// ── HERO VIDEO MOBILE FIX ────────────
-(function initHeroVideo() {
-  const slotA = document.getElementById('heroVideoA');
-  const slotB = document.getElementById('heroVideoB');
-  if (!slotA) return;
-
-  const wrap = document.querySelector('.hero__video-wrap');
-
-  function showFallback() {
-    if (wrap) wrap.style.background = 'linear-gradient(135deg, #1a4a1e 0%, #0f2e12 100%)';
-    slotA.style.display = 'none';
-    if (slotB) slotB.style.display = 'none';
-  }
-
-  slotA.addEventListener('error', showFallback);
-  if (slotB) slotB.addEventListener('error', showFallback);
-
-  // Belt-and-suspenders play attempt (autoplay attr should handle it,
-  // but some mobile browsers need an explicit .play() call)
-  slotA.play().catch(() => {
-    // On first touch, retry — covers iOS browsers that require a gesture
-    document.addEventListener('touchstart', function handler() {
-      slotA.play().catch(showFallback);
-      document.removeEventListener('touchstart', handler);
-    }, { once: true, passive: true });
-  });
-})();
 
 // ── FAQ ACCORDION ─────────────────────
 (function initFaqAccordion() {
@@ -656,9 +629,10 @@ document.addEventListener('DOMContentLoaded', () => {
 /* =========================================
    HERO VIDEO PLAYLIST
    =========================================
-   Each video plays to completion then crossfades
-   cleanly to the next. Standby slot buffers the
-   upcoming clip while the current one plays.
+   Video stays invisible (opacity 0) until play
+   is confirmed — prevents browser play-button
+   overlay appearing on mobile before autoplay
+   kicks in. Only becomes visible on .then().
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
@@ -672,9 +646,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const slotB = document.getElementById('heroVideoB');
   if (!slotA || !slotB) return;
 
+  const wrap = document.querySelector('.hero__video-wrap');
+
   let curIdx  = 0;
   let active  = slotA;
   let standby = slotB;
+
+  function showFallback() {
+    if (wrap) wrap.style.background = 'linear-gradient(135deg, #1a4a1e 0%, #0f2e12 100%)';
+    slotA.style.display = 'none';
+    slotB.style.display = 'none';
+  }
 
   function setSrc(el, src) {
     if (el.getAttribute('src') !== src) {
@@ -697,16 +679,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function doFade() {
       if (fired) return;
       fired = true;
-
       standby.currentTime = 0;
       standby.play().catch(() => {});
-
       standby.classList.add('hero__video--active');
       active.classList.remove('hero__video--active');
-
       [active, standby] = [standby, active];
-
-      // Buffer the clip after next
       preloadNext();
     }
 
@@ -720,10 +697,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   slotA.addEventListener('ended', onEnded);
   slotB.addEventListener('ended', onEnded);
+  slotA.addEventListener('error', showFallback);
+  slotB.addEventListener('error', showFallback);
 
-  slotA.classList.add('hero__video--active');
-  slotA.play().catch(() => {});
+  // Only reveal video AFTER play is confirmed — this prevents the
+  // browser showing its native play-button overlay on mobile
+  function startPlayback() {
+    slotA.play().then(() => {
+      slotA.classList.add('hero__video--active');
+      preloadNext();
+    }).catch(() => {
+      // Autoplay blocked — retry on first touch (some iOS browsers)
+      document.addEventListener('touchstart', function handler() {
+        slotA.play().then(() => {
+          slotA.classList.add('hero__video--active');
+          preloadNext();
+        }).catch(showFallback);
+        document.removeEventListener('touchstart', handler);
+      }, { once: true, passive: true });
+    });
+  }
 
-  // Buffer next clip as soon as current starts
-  preloadNext();
+  startPlayback();
 })();
