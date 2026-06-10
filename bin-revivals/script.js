@@ -700,9 +700,10 @@ document.addEventListener('DOMContentLoaded', () => {
   slotA.addEventListener('error', showFallback);
   slotB.addEventListener('error', showFallback);
 
-  // Only reveal video AFTER play is confirmed — this prevents the
-  // browser showing its native play-button overlay on mobile
+  // src is NOT set in HTML — set it here so the browser has no video
+  // state (and shows no play-button overlay) until we are ready to play
   function startPlayback() {
+    setSrc(slotA, PLAYLIST[0]);
     slotA.play().then(() => {
       slotA.classList.add('hero__video--active');
       preloadNext();

@@ -2543,10 +2543,14 @@ body.urgency-hidden .hero {
 
 /* Suppress browser's native play overlay on all platforms */
 .hero__video--slot::-webkit-media-controls,
+.hero__video--slot::-webkit-media-controls-enclosure,
+.hero__video--slot::-webkit-media-controls-overlay-enclosure,
+.hero__video--slot::-webkit-media-controls-overlay-play-button,
 .hero__video--slot::-webkit-media-controls-start-playback-button,
 .hero__video--slot::-webkit-media-controls-play-button,
 .hero__video--slot::-webkit-media-controls-panel {
   display: none !important;
+  opacity: 0 !important;
   -webkit-appearance: none;
 }
 
