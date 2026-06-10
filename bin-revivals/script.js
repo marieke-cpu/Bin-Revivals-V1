@@ -573,6 +573,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (innerHero) {
         innerHero.style.paddingTop = (urgencyH + navFallback.offsetHeight + 24) + 'px';
       }
+      // Gallery sticky filter bar: must stick exactly at the nav bottom,
+      // not at a hardcoded pixel value that ignores the urgency bar height
+      const galleryFilters = document.getElementById('galleryFilters');
+      if (galleryFilters) {
+        galleryFilters.style.top = (urgencyH + navFallback.offsetHeight) + 'px';
+      }
     }
   }
 

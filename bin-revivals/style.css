@@ -1492,7 +1492,7 @@ ul { list-style: none; }
   padding: 24px 0;
   background: var(--white);
   position: sticky;
-  top: 72px;
+  top: 182px; /* fallback: JS overrides with exact urgencyH + navH */
   z-index: 50;
   border-bottom: 1px solid var(--grey-light);
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
@@ -1611,15 +1611,24 @@ ul { list-style: none; }
   .video-grid--gallery { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .stat-card { padding: 32px 16px; }
-  .filter-tabs { gap: 8px; }
-  .filter-tab { font-size: 0.74rem; padding: 7px 14px; }
+  .gallery-filters { padding: 12px 0; overflow: hidden; }
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 16px 4px;
+  }
+  .filter-tabs::-webkit-scrollbar { display: none; }
+  .filter-tab { flex-shrink: 0; font-size: 0.74rem; padding: 7px 14px; }
   .showcase-cta__actions,
   .gallery-cta__actions { flex-direction: column; align-items: center; }
   .showcase-cta__actions .btn,
   .gallery-cta__actions .btn { width: 100%; max-width: 300px; justify-content: center; }
   .lightbox__caption { flex-direction: column; align-items: flex-start; gap: 8px; }
   .gallery-hero { padding: 190px 24px 48px; } /* fallback before JS runs */
-  .gallery-filters { top: 60px; }
 }
 
 /* =========================================
