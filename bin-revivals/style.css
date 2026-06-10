@@ -253,9 +253,8 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(111,207,69,0.13) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(45,106,49,0.25) 0%, transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(111,207,69,0.07) 0%, transparent 40%);
+    radial-gradient(circle at 20% 50%, rgba(111,207,69,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(45,106,49,0.15) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -1286,8 +1285,8 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 60%, rgba(111,207,69,0.16) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(45,106,49,0.2) 0%, transparent 40%);
+    radial-gradient(circle at 20% 60%, rgba(111,207,69,0.07) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(45,106,49,0.1) 0%, transparent 40%);
   pointer-events: none;
 }
 
@@ -3439,75 +3438,3 @@ body.urgency-hidden .hero {
 
 }
 
-/* =========================================
-   GREEN GLOW EFFECTS
-   ========================================= */
-
-/* Hero headline green accent */
-.hero__headline--accent {
-  text-shadow: 0 0 40px rgba(111,207,69,0.55), 0 0 80px rgba(111,207,69,0.25);
-}
-
-/* Section labels — subtle electric feel */
-.section-label {
-  text-shadow: 0 0 14px rgba(76,175,80,0.55);
-}
-.section-label--light {
-  text-shadow: 0 0 16px rgba(111,207,69,0.65);
-}
-
-/* Primary CTA buttons — ambient glow at rest, stronger on hover */
-.btn--primary {
-  box-shadow: 0 0 18px rgba(111,207,69,0.25);
-}
-.btn--primary:hover {
-  box-shadow: 0 6px 28px rgba(111,207,69,0.65), 0 0 0 4px rgba(111,207,69,0.12);
-}
-
-/* Nav CTA button */
-.nav__cta {
-  box-shadow: 0 0 14px rgba(111,207,69,0.35) !important;
-  transition: box-shadow var(--transition), background var(--transition) !important;
-}
-.nav__cta:hover {
-  box-shadow: 0 0 28px rgba(111,207,69,0.6) !important;
-}
-
-/* Featured pricing card */
-.pricing__card--featured {
-  box-shadow: 0 0 44px rgba(111,207,69,0.2), 0 8px 32px rgba(0,0,0,0.28);
-}
-.pricing__card--featured:hover {
-  box-shadow: 0 0 64px rgba(111,207,69,0.35), 0 16px 48px rgba(0,0,0,0.38);
-}
-
-/* Most Popular badge */
-.pricing__badge {
-  box-shadow: 0 0 20px rgba(111,207,69,0.7), 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* Stat cards — green tint on hover */
-.stat-card:hover {
-  box-shadow: 0 8px 40px rgba(111,207,69,0.2), 0 12px 48px rgba(0,0,0,0.15);
-}
-
-/* Step process icons */
-.step__icon {
-  filter: drop-shadow(0 0 8px rgba(111,207,69,0.5));
-}
-
-/* Why-us feature cards hover */
-.feature:hover {
-  border-color: rgba(111,207,69,0.3);
-  box-shadow: 0 8px 32px rgba(111,207,69,0.1);
-}
-
-/* Feature icons */
-.feature__icon {
-  filter: drop-shadow(0 0 6px rgba(111,207,69,0.45));
-}
-
-/* Testimonial card hover — subtle green ring */
-.testimonial-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.14), 0 0 0 2px rgba(111,207,69,0.22);
-}
