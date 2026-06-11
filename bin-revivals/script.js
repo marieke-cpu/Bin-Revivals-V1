@@ -727,3 +727,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startPlayback();
 })();
+
+// ── REVIEW CAROUSELS ──────────────────────
+(function initReviewCarousels() {
+  document.querySelectorAll('.review-carousel').forEach(function(carousel) {
+    var track = carousel.querySelector('.review-carousel__track');
+    var dotsContainer = carousel.querySelector('.review-carousel__dots');
+    var prevBtn = carousel.querySelector('.review-carousel__btn--prev');
+    var nextBtn = carousel.querySelector('.review-carousel__btn--next');
+    var cards = Array.from(track.querySelectorAll('.review-card'));
+    var cardCount = cards.length;
+
+    cards.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'review-carousel__dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Review ' + (i + 1));
+      dot.setAttribute('data-index', i);
+      dot.setAttribute('role', 'tab');
+      dotsContainer.appendChild(dot);
+    });
+    var dots = Array.from(dotsContainer.querySelectorAll('.review-carousel__dot'));
+
+    function getCardWidth() {
+      return cards[0].offsetWidth + 24;
+    }
+
+    function getVisibleCount() {
+      var w = carousel.offsetWidth;
+      if (w <= 640) return 1;
+      if (w <= 900) return 2;
+      return 3;
+    }
+
+    function currentIndex() {
+      return Math.round(track.scrollLeft / getCardWidth());
+    }
+
+    function scrollToCard(index) {
+      var idx = Math.max(0, Math.min(cardCount - 1, index));
+      track.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
+    }
+
+    function updateDots() {
+      var idx = currentIndex();
+      dots.forEach(function(dot, i) {
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+
+    prevBtn.addEventListener('click', function() {
+      scrollToCard(currentIndex() - getVisibleCount());
+    });
+
+    nextBtn.addEventListener('click', function() {
+      scrollToCard(currentIndex() + getVisibleCount());
+    });
+
+    track.addEventListener('scroll', updateDots, { passive: true });
+
+    dots.forEach(function(dot) {
+      dot.addEventListener('click', function() {
+        scrollToCard(parseInt(this.getAttribute('data-index')));
+      });
+    });
+  });
+})();
