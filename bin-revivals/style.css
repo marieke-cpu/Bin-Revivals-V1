@@ -2847,6 +2847,11 @@ body.urgency-hidden .hero {
 }
 
 /* Suppress browser's native play overlay on all platforms */
+.hero__video--slot {
+  /* iOS Safari hack: clip-path creates a stacking context that hides the native play button */
+  -webkit-clip-path: inset(0);
+  clip-path: inset(0);
+}
 .hero__video--slot::-webkit-media-controls,
 .hero__video--slot::-webkit-media-controls-enclosure,
 .hero__video--slot::-webkit-media-controls-overlay-enclosure,
@@ -2857,6 +2862,8 @@ body.urgency-hidden .hero {
   display: none !important;
   opacity: 0 !important;
   -webkit-appearance: none;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* ── 2. LIGHTER OVERLAY ──────────────────────────────────────────────

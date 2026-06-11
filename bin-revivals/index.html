@@ -306,9 +306,11 @@
     <!-- Hero Before-and-After Playlist (plays each video to completion, then crossfades) -->
     <div class="hero__video-wrap">
       <video class="hero__video hero__video--slot" id="heroVideoA"
-             autoplay muted playsinline webkit-playsinline preload="auto" disablepictureinpicture></video>
+             autoplay muted playsinline webkit-playsinline preload="auto"
+             disablepictureinpicture x-webkit-airplay="deny"></video>
       <video class="hero__video hero__video--slot" id="heroVideoB"
-             muted playsinline webkit-playsinline preload="none" disablepictureinpicture></video>
+             muted playsinline webkit-playsinline preload="none"
+             disablepictureinpicture x-webkit-airplay="deny"></video>
       <div class="hero__video-overlay"></div>
     </div>
 
