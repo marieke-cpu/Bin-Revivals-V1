@@ -2788,8 +2788,8 @@ body.urgency-hidden .hero {
     font-weight: 700;
     color: rgba(255,255,255,0.75);
   }
-  .hero { padding-top: 148px; min-height: 100svh; }
-  body.urgency-hidden .hero { padding-top: 110px; }
+  .hero { padding-top: 190px; min-height: 100svh; }
+  body.urgency-hidden .hero { padding-top: 150px; }
   .hero__headline { font-size: clamp(2.6rem, 9vw, 4rem); }
   .hero__sub { font-size: 0.95rem; margin-bottom: 24px; }
   .btn--lg { padding: 14px 28px; font-size: 0.95rem; }
@@ -3158,7 +3158,7 @@ body.urgency-hidden .hero {
   border-bottom: 1px solid rgba(111, 207, 69, 0.12);
   /* Scroll-hide animation */
   overflow: hidden;
-  max-height: 80px;
+  max-height: 100px;
   transition: max-height 0.35s ease, padding 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
 }
 
@@ -3173,8 +3173,24 @@ body.urgency-hidden .hero {
 
 /* ── Responsive ───────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Hide trust bar: mobile header = single nav row */
-  .site-header > .nav-trust-bar { display: none; }
+  /* Show trust bar on mobile — compact 2-column points, no star rating */
+  .site-header > .nav-trust-bar {
+    padding: 6px 12px;
+    max-height: 100px;
+  }
+  .site-header > .nav-trust-bar .nav-trust-bar__rating,
+  .site-header > .nav-trust-bar .nav-trust-bar__sep { display: none; }
+  .site-header > .nav-trust-bar .nav-trust-bar__points {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    justify-items: center;
+  }
+  .site-header > .nav-trust-bar .nav-trust-bar__point {
+    font-size: 0.63rem;
+    white-space: nowrap;
+  }
   /* Make nav the dropdown's containing block */
   .site-header > .nav { position: relative; }
 }
