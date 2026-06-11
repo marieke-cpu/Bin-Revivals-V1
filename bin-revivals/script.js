@@ -562,41 +562,52 @@ document.addEventListener('DOMContentLoaded', () => {
 // The site-header is the single fixed wrapper for nav + trust bar.
 // We only need to push it below the urgency bar, then pad the hero.
 (function initHeaderStack() {
-  const urgencyBar = document.getElementById('urgencyBar');
-  const siteHeader = document.getElementById('siteHeader');
-  const hero       = document.getElementById('home');
+  const urgencyBar  = document.getElementById('urgencyBar');
+  const siteHeader  = document.getElementById('siteHeader');
+  const hero        = document.getElementById('home');
+  const trustBar    = document.getElementById('navTrustBar');
+  const navbar      = document.getElementById('navbar');
 
-  // Fallback for pages that have no siteHeader (gallery, service-areas, location pages)
-  const navFallback = !siteHeader ? document.getElementById('navbar') : null;
+  // Fallback for pages that still have no siteHeader wrapper
+  const navFallback = !siteHeader ? navbar : null;
 
   function update() {
     const urgencyH = (urgencyBar && !urgencyBar.classList.contains('hidden'))
                      ? urgencyBar.offsetHeight : 0;
 
     if (siteHeader) {
-      // index.html: move entire header below urgency bar
+      // All wrapped pages: move the single fixed header below the urgency bar
       siteHeader.style.top = urgencyH + 'px';
-      // Pad hero to start exactly below the full header height
+      // Homepage hero
       if (hero) {
         hero.style.paddingTop = (urgencyH + siteHeader.offsetHeight) + 'px';
       }
+      // Inner-page hero (.page-hero)
+      const innerHero = document.querySelector('.page-hero');
+      if (innerHero) {
+        innerHero.style.paddingTop = (urgencyH + siteHeader.offsetHeight + 24) + 'px';
+      }
+      // Gallery sticky filter bar: stick just below the nav row only so it
+      // never jumps when the trust bar hides during scroll.
+      const galleryFilters = document.getElementById('galleryFilters');
+      if (galleryFilters && navbar) {
+        galleryFilters.style.top = (urgencyH + navbar.offsetHeight) + 'px';
+      }
     } else if (navFallback) {
-      // Other pages: position nav below urgency bar
+      // Legacy fallback for any page still without a siteHeader wrapper
       navFallback.style.top = urgencyH + 'px';
-      // Position standalone trust bar directly below nav
       if (trustBar) {
         trustBar.style.top = (urgencyH + navFallback.offsetHeight) + 'px';
       }
+      const trustBarHidden = trustBar ? trustBar.classList.contains('trust-bar--hidden') : true;
       const trustBarH = (trustBar && !trustBarHidden) ? trustBar.offsetHeight : 0;
-      // Pad the inner-page hero so its content clears the full header.
       const innerHero = document.querySelector('.page-hero');
       if (innerHero) {
         innerHero.style.paddingTop = (urgencyH + navFallback.offsetHeight + trustBarH + 24) + 'px';
       }
-      // Gallery sticky filter bar: must stick exactly at the nav+trust bar bottom
       const galleryFilters = document.getElementById('galleryFilters');
       if (galleryFilters) {
-        galleryFilters.style.top = (urgencyH + navFallback.offsetHeight + trustBarH) + 'px';
+        galleryFilters.style.top = (urgencyH + navFallback.offsetHeight) + 'px';
       }
     }
   }
