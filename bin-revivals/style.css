@@ -177,9 +177,9 @@ ul { list-style: none; }
 }
 
 .nav__logo img {
-  height: 140px;
+  height: 120px;
   width: auto;
-  max-width: 340px;
+  max-width: 320px;
   object-fit: contain;
   display: block;
 }
@@ -3172,11 +3172,11 @@ body.urgency-hidden .hero {
 
 /* Nav logo — scales down on smaller viewports */
 @media (max-width: 1024px) {
-  .nav__logo img { height: 110px; }
+  .nav__logo img { height: 100px; }
 }
 
 @media (max-width: 900px) {
-  .nav__logo img { height: 96px; max-width: 280px; }
+  .nav__logo img { height: 88px; max-width: 270px; }
   .footer__logo  { height: 88px; max-width: 280px; }
 }
 
