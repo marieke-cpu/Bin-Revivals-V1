@@ -2198,6 +2198,12 @@ body.urgency-hidden .nav { top: 0; }
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+.trust-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.trust-grid--4 .trust-card {
+  padding: 32px 22px;
+}
 
 .trust-card {
   padding: 40px 32px;
