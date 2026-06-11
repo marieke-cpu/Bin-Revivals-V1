@@ -1464,6 +1464,9 @@ ul { list-style: none; }
 }
 
 @media (max-width: 640px) {
+  .review-carousel__track .review-card {
+    flex: 0 0 100%;
+  }
   .review-carousel__btn {
     width: 36px;
     height: 36px;
@@ -3183,24 +3186,20 @@ body.urgency-hidden .hero {
 
 /* ── Responsive ───────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Show trust bar on mobile — compact 2-column points, no star rating */
+  /* Mobile trust bar — stars + region only, centred */
   .site-header > .nav-trust-bar {
     padding: 6px 12px;
     max-height: 100px;
   }
-  .site-header > .nav-trust-bar .nav-trust-bar__rating,
-  .site-header > .nav-trust-bar .nav-trust-bar__sep { display: none; }
-  .site-header > .nav-trust-bar .nav-trust-bar__points {
+  .site-header > .nav-trust-bar .nav-trust-bar__sep,
+  .site-header > .nav-trust-bar .nav-trust-bar__points { display: none; }
+  .site-header > .nav-trust-bar .nav-trust-bar__rating {
+    display: flex;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 8px;
-    justify-items: center;
+    justify-content: center;
   }
-  .site-header > .nav-trust-bar .nav-trust-bar__point {
-    font-size: 0.63rem;
-    white-space: nowrap;
-  }
+  .site-header > .nav-trust-bar .nav-trust-bar__region { display: inline; }
+  .site-header > .nav-trust-bar .nav-trust-bar__rating::after { content: none; }
   /* Make nav the dropdown's containing block */
   .site-header > .nav { position: relative; }
 }
@@ -3738,22 +3737,17 @@ body.urgency-hidden .hero {
     font-weight: 700;
   }
 
-  /* Compact trust bar on mobile — 4 points in 2-column grid, no star rating */
+  /* Mobile trust bar — stars + region only, centred */
   .nav-trust-bar { padding: 6px 12px; }
-  .nav-trust-bar .nav-trust-bar__rating,
-  .nav-trust-bar .nav-trust-bar__sep { display: none; }
-  .nav-trust-bar .nav-trust-bar__points {
+  .nav-trust-bar .nav-trust-bar__sep,
+  .nav-trust-bar .nav-trust-bar__points { display: none; }
+  .nav-trust-bar .nav-trust-bar__rating {
+    display: flex;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 8px;
-    justify-items: center;
+    justify-content: center;
   }
-  .nav-trust-bar .nav-trust-bar__point {
-    display: inline-flex; /* override earlier nth-child hide */
-    font-size: 0.63rem;
-    white-space: nowrap;
-  }
+  .nav-trust-bar .nav-trust-bar__region { display: inline; }
+  .nav-trust-bar .nav-trust-bar__rating::after { content: none; }
 
   /* ── 4. HERO LAYOUT ─────────────────────
      Clean hierarchy: Headline → Sub → CTAs
