@@ -1464,9 +1464,6 @@ ul { list-style: none; }
 }
 
 @media (max-width: 640px) {
-  .review-carousel__track .review-card {
-    flex: 0 0 100%;
-  }
   .review-carousel__btn {
     width: 36px;
     height: 36px;
@@ -2570,7 +2567,7 @@ a.sa-chip:hover {
   .location-benefits { grid-template-columns: 1fr; }
   .floating-cta { bottom: 80px; right: 16px; }
   .sticky-mobile-cta { padding: 10px 12px; }
-  .footer { padding-bottom: 140px; }
+  .footer { padding-bottom: 86px; }
   .sa-cta { flex-direction: column; align-items: stretch; }
   .sa-cta .btn { text-align: center; justify-content: center; }
   .nav { top: 36px; }
