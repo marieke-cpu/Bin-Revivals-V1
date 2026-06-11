@@ -177,12 +177,10 @@ ul { list-style: none; }
 }
 
 .nav__logo img {
-  height: 110px;
+  height: 140px;
   width: auto;
-  max-width: 300px;
+  max-width: 340px;
   object-fit: contain;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
   display: block;
 }
 
@@ -3174,16 +3172,16 @@ body.urgency-hidden .hero {
 
 /* Nav logo — scales down on smaller viewports */
 @media (max-width: 1024px) {
-  .nav__logo img { height: 96px; }
+  .nav__logo img { height: 110px; }
 }
 
 @media (max-width: 900px) {
-  .nav__logo img { height: 84px; max-width: 260px; }
+  .nav__logo img { height: 96px; max-width: 280px; }
   .footer__logo  { height: 88px; max-width: 280px; }
 }
 
 @media (max-width: 640px) {
-  .nav__logo img { height: 46px; max-width: 160px; }
+  .nav__logo img { height: 52px; max-width: 180px; }
   .footer__logo  { height: 72px; max-width: 240px; }
 }
 
