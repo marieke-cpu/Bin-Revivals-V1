@@ -2803,7 +2803,7 @@ body.urgency-hidden .hero {
   }
   .hero { padding-top: 190px; min-height: 100svh; }
   body.urgency-hidden .hero { padding-top: 150px; }
-  .hero__headline { font-size: clamp(2.6rem, 9vw, 4rem); }
+  .hero__headline { font-size: clamp(3rem, 9.5vw, 4.2rem); }
   .hero__sub { font-size: 0.95rem; margin-bottom: 24px; }
   .btn--lg { padding: 14px 28px; font-size: 0.95rem; }
 }
