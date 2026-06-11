@@ -1892,7 +1892,7 @@ ul { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 200;
   background: linear-gradient(90deg, #1a4a1e, #2d6a31);
-  padding: 10px 20px;
+  padding: 6px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
