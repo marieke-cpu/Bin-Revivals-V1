@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const heroHeight = () => {
     const hero = document.getElementById('home');
-    return hero ? hero.offsetHeight * 0.6 : 400;
+    return hero ? hero.offsetHeight * 0.6 : 200;
   };
 
   const toggle = () => {
