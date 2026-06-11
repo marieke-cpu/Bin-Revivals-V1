@@ -7,13 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── NAV SCROLL EFFECT ──────────────────────
   const navbar = document.getElementById('navbar');
+  const siteHeader = document.getElementById('siteHeader');
+  const trustBar   = document.getElementById('navTrustBar');
 
-  const siteHeader    = document.getElementById('siteHeader');
+  let lastScrollY = window.scrollY;
+  let trustBarHidden = false;
+
   const handleNavScroll = () => {
-    const scrolled = window.scrollY > 60;
+    const y = window.scrollY;
+    const scrolled = y > 60;
     navbar.classList.toggle('scrolled', scrolled);
-    // Also toggle on the wrapper so .site-header.scrolled CSS fires
     if (siteHeader) siteHeader.classList.toggle('scrolled', scrolled);
+
+    // Hide trust bar on scroll-down past 80px, reveal on scroll-up
+    if (trustBar) {
+      const goingDown = y > lastScrollY;
+      const shouldHide = goingDown && y > 80;
+      if (shouldHide !== trustBarHidden) {
+        trustBarHidden = shouldHide;
+        trustBar.classList.toggle('trust-bar--hidden', trustBarHidden);
+        if (window._headerUpdate) window._headerUpdate();
+      }
+    }
+    lastScrollY = y;
   };
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
@@ -582,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  window._headerUpdate = update;
   update();
 
   const closeBtn = document.getElementById('urgencyClose');
