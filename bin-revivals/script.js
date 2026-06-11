@@ -583,17 +583,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (navFallback) {
       // Other pages: position nav below urgency bar
       navFallback.style.top = urgencyH + 'px';
+      // Position standalone trust bar directly below nav
+      if (trustBar) {
+        trustBar.style.top = (urgencyH + navFallback.offsetHeight) + 'px';
+      }
+      const trustBarH = (trustBar && !trustBarHidden) ? trustBar.offsetHeight : 0;
       // Pad the inner-page hero so its content clears the full header.
-      // Same logic as index.html: urgency height + nav height + breathing room.
       const innerHero = document.querySelector('.page-hero');
       if (innerHero) {
-        innerHero.style.paddingTop = (urgencyH + navFallback.offsetHeight + 24) + 'px';
+        innerHero.style.paddingTop = (urgencyH + navFallback.offsetHeight + trustBarH + 24) + 'px';
       }
-      // Gallery sticky filter bar: must stick exactly at the nav bottom,
-      // not at a hardcoded pixel value that ignores the urgency bar height
+      // Gallery sticky filter bar: must stick exactly at the nav+trust bar bottom
       const galleryFilters = document.getElementById('galleryFilters');
       if (galleryFilters) {
-        galleryFilters.style.top = (urgencyH + navFallback.offsetHeight) + 'px';
+        galleryFilters.style.top = (urgencyH + navFallback.offsetHeight + trustBarH) + 'px';
       }
     }
   }

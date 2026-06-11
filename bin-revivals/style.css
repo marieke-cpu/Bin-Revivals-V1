@@ -2567,7 +2567,9 @@ a.sa-chip:hover {
   .location-benefits { grid-template-columns: 1fr; }
   .floating-cta { bottom: 80px; right: 16px; }
   .sticky-mobile-cta { padding: 10px 12px; }
-  .footer { padding-bottom: 86px; }
+  .footer { padding-top: 32px; padding-bottom: 66px; }
+  .footer__inner { padding-bottom: 20px; }
+  .footer__bottom { padding-top: 10px; }
   .sa-cta { flex-direction: column; align-items: stretch; }
   .sa-cta .btn { text-align: center; justify-content: center; }
   .nav { top: 36px; }
@@ -2644,11 +2646,22 @@ a.sa-chip:hover {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 7px 0;
-  transition: top 0.3s ease;
+  overflow: hidden;
+  max-height: 100px;
+  transition: top 0.3s ease, max-height 0.35s ease, padding 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
 }
 
 body.urgency-hidden .nav-trust-bar {
   top: 72px; /* CSS fallback when urgency bar is gone */
+}
+
+.nav-trust-bar.trust-bar--hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  opacity: 0;
 }
 
 .nav-trust-bar__inner {
@@ -3725,9 +3738,22 @@ body.urgency-hidden .hero {
     font-weight: 700;
   }
 
-  /* Trust bar inside site-header — hidden on mobile.
-     Stats bar in hero provides the same signals.     */
-  .nav-trust-bar { display: none; }
+  /* Compact trust bar on mobile — 4 points in 2-column grid, no star rating */
+  .nav-trust-bar { padding: 6px 12px; }
+  .nav-trust-bar .nav-trust-bar__rating,
+  .nav-trust-bar .nav-trust-bar__sep { display: none; }
+  .nav-trust-bar .nav-trust-bar__points {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    justify-items: center;
+  }
+  .nav-trust-bar .nav-trust-bar__point {
+    display: inline-flex; /* override earlier nth-child hide */
+    font-size: 0.63rem;
+    white-space: nowrap;
+  }
 
   /* ── 4. HERO LAYOUT ─────────────────────
      Clean hierarchy: Headline → Sub → CTAs
