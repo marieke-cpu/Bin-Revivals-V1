@@ -723,22 +723,28 @@ document.addEventListener('DOMContentLoaded', () => {
   slotA.addEventListener('error', showFallback);
   slotB.addEventListener('error', showFallback);
 
-  // src is NOT set in HTML — set it here so the browser has no video
-  // state (and shows no play-button overlay) until we are ready to play
+  // Reveal the video only once a frame has decoded — prevents the black flash
+  // that occurs when play() resolves before the first frame is ready.
+  function revealSlotA() {
+    slotA.classList.add('hero__video--active');
+    preloadNext();
+  }
+
   function startPlayback() {
     setSrc(slotA, PLAYLIST[0]);
-    slotA.play().then(() => {
-      slotA.classList.add('hero__video--active');
-      preloadNext();
-    }).catch(() => {
-      // Autoplay blocked — retry on first touch (some iOS browsers)
-      document.addEventListener('touchstart', function handler() {
-        slotA.play().then(() => {
-          slotA.classList.add('hero__video--active');
-          preloadNext();
-        }).catch(showFallback);
-        document.removeEventListener('touchstart', handler);
-      }, { once: true, passive: true });
+
+    // Wait for first decoded frame before making video visible
+    slotA.addEventListener('canplay', revealSlotA, { once: true });
+
+    slotA.play().catch(() => {
+      // Autoplay blocked — retry on first user interaction (touch or click)
+      function retryOnInteraction() {
+        slotA.play().catch(showFallback);
+        document.removeEventListener('touchstart', retryOnInteraction);
+        document.removeEventListener('click', retryOnInteraction);
+      }
+      document.addEventListener('touchstart', retryOnInteraction, { once: true, passive: true });
+      document.addEventListener('click', retryOnInteraction, { once: true });
     });
   }
 
