@@ -1261,6 +1261,56 @@ ul { list-style: none; }
   margin-top: 40px;
 }
 
+/* CTA card inside before/after grid */
+.ba-cta {
+  background: var(--off-black);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  border-top: 4px solid var(--green-lime);
+}
+.ba-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 28px;
+  text-align: center;
+  width: 100%;
+}
+.ba-cta__price {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--green-lime);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.ba-cta__price span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0;
+}
+.ba-cta__heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  margin: 0;
+}
+.ba-cta__sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 4px;
+}
+@media (max-width: 640px) {
+  .ba-cta__inner { padding: 32px 20px; gap: 10px; }
+  .ba-cta__price { font-size: 2.2rem; }
+}
+
 @media (max-width: 900px) {
   .ba-grid { grid-template-columns: 1fr; }
   .ba-extras { grid-template-columns: repeat(2, 1fr); }
