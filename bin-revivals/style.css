@@ -1330,7 +1330,9 @@ ul { list-style: none; }
   .ba-pair { gap: 2px; }
   .ba-grid { gap: 4px; margin-top: 28px; }
   .ba-extras { grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px; }
+  .ba-extras .ba-cta { grid-column: 1 / -1; }
   .photo-gallery { padding: 56px 0; }
+  .page-gallery .nav-trust-bar { display: none !important; }
 }
 
 /* =========================================
