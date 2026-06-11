@@ -306,7 +306,7 @@
     <!-- Hero Before-and-After Playlist (plays each video to completion, then crossfades) -->
     <div class="hero__video-wrap">
       <video class="hero__video hero__video--slot" id="heroVideoA"
-             muted playsinline webkit-playsinline preload="metadata" disablepictureinpicture></video>
+             autoplay muted playsinline webkit-playsinline preload="auto" disablepictureinpicture></video>
       <video class="hero__video hero__video--slot" id="heroVideoB"
              muted playsinline webkit-playsinline preload="none" disablepictureinpicture></video>
       <div class="hero__video-overlay"></div>
@@ -644,13 +644,13 @@
           <div class="pricing__tag">Residential</div>
           <h3 class="pricing__name">Home Bin Cleaning</h3>
           <div style="padding:16px 0 4px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15);">
+            <div class="pricing__row" style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.15);">
               <span style="font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.85);">One-Off Cleaning</span>
-              <span style="font-family:var(--font-display);font-size:1.5rem;color:var(--green-lime);line-height:1;">From $30</span>
+              <span class="pricing__row-price" style="font-family:var(--font-display);font-size:1.5rem;color:var(--green-lime);line-height:1;">From $30</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;">
+            <div class="pricing__row" style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;">
               <span style="font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.85);">Monthly Recurring</span>
-              <span style="font-family:var(--font-display);font-size:1.5rem;color:var(--green-lime);line-height:1;">$25 Per Household</span>
+              <span class="pricing__row-price" style="font-family:var(--font-display);font-size:1.5rem;color:var(--green-lime);line-height:1;">$25 Per Household</span>
             </div>
           </div>
           <ul class="pricing__features">

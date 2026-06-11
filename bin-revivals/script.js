@@ -662,7 +662,6 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================= */
 (function initHeroPlaylist() {
   const PLAYLIST = [
-    'Videos/Residential1.mp4',
     'Videos/Residential2.mp4',
     'Videos/Residential4.mp4',
     'Videos/Residential11.mp4',
@@ -726,18 +725,24 @@ document.addEventListener('DOMContentLoaded', () => {
   slotA.addEventListener('error', showFallback);
   slotB.addEventListener('error', showFallback);
 
-  // Reveal the video only once a frame has decoded — prevents the black flash
-  // that occurs when play() resolves before the first frame is ready.
-  function revealSlotA() {
-    slotA.classList.add('hero__video--active');
-    preloadNext();
-  }
-
   function startPlayback() {
     setSrc(slotA, PLAYLIST[0]);
 
-    // Wait for first decoded frame before making video visible
-    slotA.addEventListener('canplay', revealSlotA, { once: true });
+    // Reveal once a frame is ready. Guard against double-fire across events.
+    let revealed = false;
+    function doReveal() {
+      if (revealed) return;
+      revealed = true;
+      slotA.classList.add('hero__video--active');
+      preloadNext();
+    }
+
+    // 'playing' fires when playback actually starts (most reliable on mobile).
+    // 'canplay' fires when the browser has buffered enough to begin.
+    // Timeout fallback ensures the video is never stuck invisible.
+    slotA.addEventListener('playing', doReveal, { once: true });
+    slotA.addEventListener('canplay',  doReveal, { once: true });
+    setTimeout(doReveal, 2000);
 
     slotA.play().catch(() => {
       // Autoplay blocked — retry on first user interaction (touch or click)

@@ -532,6 +532,18 @@ ul { list-style: none; }
   background: var(--white);
 }
 
+/* Pricing row — label left, price right. Stacks on narrow phones. */
+@media (max-width: 480px) {
+  .pricing__row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px;
+  }
+  .pricing__row-price {
+    font-size: 1.3rem !important;
+  }
+}
+
 .pricing__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
