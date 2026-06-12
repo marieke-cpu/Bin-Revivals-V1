@@ -1405,7 +1405,7 @@ ul { list-style: none; }
   gap: 24px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
   padding-bottom: 8px;
 }
@@ -1478,19 +1478,14 @@ ul { list-style: none; }
 }
 
 @media (max-width: 640px) {
-  /* Disable horizontal scroll carousel — stack cards vertically */
-  .review-carousel__track {
-    overflow-x: visible;
-    scroll-snap-type: none;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding-bottom: 0;
-  }
   .review-carousel__track .review-card {
     flex: 0 0 100%;
-    scroll-snap-align: none;
   }
-  .review-carousel__controls { display: none; }
+  .review-carousel__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
 }
 
 /* =========================================
@@ -3364,7 +3359,7 @@ body.urgency-hidden .hero {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-padding-left: 24px;
-    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
     gap: 16px;
@@ -3380,25 +3375,6 @@ body.urgency-hidden .hero {
     scroll-snap-align: start;
   }
   .testimonials__dots { display: flex; }
-}
-
-@media (max-width: 640px) {
-  /* Disable horizontal scroll — stack testimonial cards vertically */
-  .testimonials__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    overflow-x: visible;
-    scroll-snap-type: none;
-    padding: 0;
-    margin: 28px 0 0;
-    gap: 16px;
-  }
-  .testimonials__grid .testimonial-card {
-    flex: unset;
-    max-width: none;
-    scroll-snap-align: none;
-  }
-  .testimonials__dots { display: none; }
 }
 
 /* =========================================
